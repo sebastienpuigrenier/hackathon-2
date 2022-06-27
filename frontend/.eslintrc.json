@@ -17,6 +17,7 @@
   },
   "plugins": ["react", "import"],
   "rules": {
+    "react/prop-types": 0,
     "no-console": "off",
     "no-restricted-syntax": [
       "error",
@@ -27,7 +28,12 @@
     ],
     "react/react-in-jsx-scope": "off",
     "react/jsx-one-expression-per-line": "off",
-    "react/no-unescaped-entities": "off"
+    "react/jsx-no-constructed-context-values": "off",
+    "jsx-a11y/click-events-have-key-events":"off",
+    "jsx-a11y/no-noninteractive-element-interactions":"off",
+    "no-plusplus":"off",
+    "radix":"off",
+    "react/no-unescaped-entities": 0
   },
   "settings": {
     "import/resolver": {
