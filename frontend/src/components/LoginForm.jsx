@@ -8,23 +8,25 @@ function LoginForm() {
   console.warn(isLog + setIsLog);
 
   return (
-    <form action="" method="post" className="container-loginForm">
-      <div>
-        <label htmlFor="email">
-          <p>Email</p>
-          <input type="email" />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          <p>Password</p>
-          <input type="password" />
-        </label>
-      </div>
-      <div>
-        <button type="button">Login</button>
-      </div>
-    </form>
+    <div className="container-loginForm">
+      <form action="" method="post" className="">
+        <div>
+          <label htmlFor="email">
+            <p>Email</p>
+            <input type="email" />
+          </label>
+        </div>
+        <div>
+          <label htmlFor="password">
+            <p>Password</p>
+            <input type="password" />
+          </label>
+        </div>
+        <div>
+          <button type="button">Login</button>
+        </div>
+      </form>
+    </div>
   );
 }
 
