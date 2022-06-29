@@ -40,7 +40,7 @@
 
 .user-name {
   color: var(--color-black);
-  font-size: var(--L);
+  font-size: var(--M);
 }
 
 .log-out {
@@ -53,7 +53,7 @@
 
 .navLink {
   color: var(--color-blue);
-  font-size: var(--M);
+  font-size: var(--S);
 }
 
 .navLink:hover {

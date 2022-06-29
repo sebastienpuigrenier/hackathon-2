@@ -15,6 +15,7 @@ function NavBar() {
       return {
         color: "var(--color-orange)",
         textDecoration: "underline var(--color-orange)",
+        fontWeight: "var(--semi-bold)",
       };
     }
     return null;
