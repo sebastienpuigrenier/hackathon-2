@@ -10,4 +10,6 @@ router.put("/items/:id", ItemController.edit);
 router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
+// router.post("/auth", AuthController.session);
+
 module.exports = router;
