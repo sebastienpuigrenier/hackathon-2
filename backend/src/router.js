@@ -45,7 +45,7 @@ router.delete(
   UsersProjectsController.delete
 );
 
-//router.post("/auth", AuthController.session);
-//router.post("/auth/logout", AuthController.logout);
+router.post("/auth", AuthController.session);
+router.post("/auth/logout", AuthController.logout);
 
 module.exports = router;
