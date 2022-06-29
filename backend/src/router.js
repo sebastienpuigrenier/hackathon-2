@@ -65,6 +65,7 @@ router.delete(
   "/projectsKeywords/:keywords_id&:project_id",
   ProjectsKeywordsController.delete
 );
+
 router.post("/auth", AuthController.session);
 router.post("/auth/logout", AuthController.logout);
 

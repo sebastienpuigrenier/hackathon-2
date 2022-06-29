@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { notifySuccess, notifyError, api } from "@services/services";
 import { v4 as uuidv4 } from "uuid";
 import projectStatus from "@services/projectStatus.json";
@@ -34,16 +34,13 @@ function ProjectForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const ENDPOINTUSER = `/users/${newProject.email}`;
-    const ENDPOINT = "/projects";
+
     api
       .get(ENDPOINTUSER, newProject)
       .then((result) => {
         setNewProject({
           ...newProject,
           user_id: result.data.id,
-        });
-        api.post(ENDPOINT, newProject).then(() => {
-          notifySuccess("Your idea is now propose to apside coworker.");
         });
       })
       .catch(() => {
@@ -52,6 +49,22 @@ function ProjectForm() {
         );
       });
   };
+
+  useEffect(() => {
+    if (newProject.user_id) {
+      const ENDPOINT = "/projects";
+      api
+        .post(ENDPOINT, newProject)
+        .then(() => {
+          notifySuccess("Your idea is now propose to apside coworker.");
+        })
+        .catch(() => {
+          notifyError(
+            "A problem occurs. Please check if all element are completed."
+          );
+        });
+    }
+  }, [newProject]);
 
   return (
     <div className="register">
