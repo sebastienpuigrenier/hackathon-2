@@ -6,6 +6,7 @@ const {
   LanguagesController,
   CommentsController,
   UsersProjectsController,
+  AuthController,
 } = require("./controllers");
 
 const router = express.Router();

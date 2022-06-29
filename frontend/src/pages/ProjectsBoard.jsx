@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/ProjectsBoard.css"
+import "../styles/ProjectsBoard.css";
 // import axios from "axios";
 
 function ProjectsBoard() {
@@ -26,25 +26,21 @@ function ProjectsBoard() {
           placeholder="  Search project"
           className="input"
         />
-        
-        <input
-          id="select"
-          type="select"
-          name="select"
-          placeholder="  type"
-        />
-        <button className="buttonBoard" type="button">SEARCH</button>
+
+        <input id="select" type="select" name="select" placeholder="  type" />
+        <button className="buttonBoard" type="button">
+          SEARCH
+        </button>
       </div>
       <div className="ProjectsBoard">
         <h2>PROJECTS IN PROGRESS</h2>
-       </div>
-        <div className="blocCard">{/* <CardDashboard /> */}</div>
-      
+      </div>
+      <div className="blocCard">{/* <CardDashboard /> */}</div>
+
       <div className="ProjectsBoard">
         <h2>PROJECTS IN IDEAS</h2>
-        </div>
-        <div className="blocCard">{/* <CardDashboard /> */}</div>
-      
+      </div>
+      <div className="blocCard">{/* <CardDashboard /> */}</div>
     </div>
   );
 }
