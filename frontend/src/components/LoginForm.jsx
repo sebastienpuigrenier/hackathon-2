@@ -10,20 +10,19 @@ function LoginForm() {
   return (
     <div className="container-loginForm">
       <form action="" method="post" className="">
-        <div>
+        <div className="form">
           <label htmlFor="email">
-            <p>Email</p>
-            <input type="email" />
+            <input type="email" placeholder="MAIL" className="input" />
           </label>
-        </div>
-        <div>
           <label htmlFor="password">
-            <p>Password</p>
-            <input type="password" />
+            <input type="password" placeholder="PASSWORD" className="input" />
           </label>
         </div>
         <div>
-          <button type="button">Login</button>
+          <button type="button" className="button-login">
+            LOG IN
+          </button>
+          <p className="forgot-password">Mot de passe oublié</p>
         </div>
       </form>
     </div>

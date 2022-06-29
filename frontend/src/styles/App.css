@@ -48,5 +48,9 @@ body {
 .main-content {
   display: flex;
   justify-content: space-between;
-  min-height: 100vh;
+  height: 100vh;
+}
+
+.pages-content {
+  width: 80vw;
 }
