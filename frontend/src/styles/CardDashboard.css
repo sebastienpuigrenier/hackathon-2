@@ -1,0 +1,115 @@
+@import "../styles/App.css";
+
+.container-card {
+  background-color: var(--color-light-gray);
+  box-shadow: 3px 3px 10px rgba(114, 114, 114, 0.3);
+  max-width: 17em;
+  max-height: 25em;
+  padding: 1em;
+  border-radius: 9px;
+  color: var(--color-gray);
+  margin: 2rem;
+}
+
+.card-top {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  border-bottom: solid 2.5px var(--color-orange);
+  margin-bottom: 1em;
+}
+
+.card-title {
+  font-size: 16px;
+  font-family: var(--font-h1);
+  color: var(--color-blue);
+  font-weight: var(--extra-bold);
+  text-transform: uppercase;
+  padding-bottom: 0.3em;
+}
+
+.card-thumb {
+  color: var(--color-orange);
+}
+.card-thumb:hover {
+  color: var(--color-blue);
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.card-description {
+  font-size: 12px;
+  max-height: 10em;
+  padding-bottom: 1em;
+}
+
+.card-infos {
+  display: flex;
+  flex-direction: column;
+  font-size: 12px;
+}
+
+.card-client {
+  font-weight: var(--bold);
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+}
+
+.card-client-entry {
+  line-height: 30px;
+}
+
+.card-language {
+  font-weight: var(--bold);
+  text-decoration: underline;
+  text-underline-offset: 2.5px;
+}
+
+.card-language-entry {
+  line-height: 30px;
+  padding-bottom: 0.5em;
+}
+
+.card-contributors {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 0.6em;
+}
+
+.circle-contri {
+  background-color: var(--color-orange);
+  border-radius: 100%;
+  width: 1.5em;
+  height: 1.5em;
+}
+
+.card-initials {
+  padding-top: 0.2em;
+  display: flex;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: var(--semi-bold);
+  color: white;
+}
+.card-initials:hover {
+  cursor: pointer;
+}
+
+.other-contributors {
+  padding-left: 0.5em;
+  font-size: 11px;
+  font-weight: var(--semi-bold);
+}
+.other-contributors:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.card-keywords {
+  text-align: center;
+  font-size: 10px;
+}
