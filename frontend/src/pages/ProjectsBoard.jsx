@@ -1,5 +1,6 @@
 import React from "react";
-import axios from "axios";
+import "../styles/ProjectsBoard.css"
+// import axios from "axios";
 
 function ProjectsBoard() {
   // const [data, setdata] = useState([]);
@@ -16,49 +17,33 @@ function ProjectsBoard() {
   // }, [data]);
 
   return (
-    <div>
-          <div className="searchBar">
-                <input
-                    id="search"
-                    
-                    type="select"
-                    name="search"
-                    placeholder="Type something: Mojito, Lemon..."
-                    className="input"
-                    
-                  /> 
-                  <input
-                    value="Submit"
-                    type="image"
-                    id="image"
-                  
-                    alt=""
-                    className="image-logo"
-                  />
-                <input
-                    id="select"
-                    
-                    type="select"
-                    name="select"
-                    placeholder="type"
-                    className="input"
-                  
-                  />
-                  <button>SEARCH</button>
-          </div>
-            <div className="Projects">
-              <h2>PROJECTS IN PROGRESS</h2>
-                  <div className="blocCard">
-                  {/* <CardDashboard /> */}
-                  </div>
-              </div>
-            <div className="Projects">
-              <h2>PROJECTS IN IDEAS</h2>
-                <div className="blocCard">
-                {/* <CardDashboard /> */}
-                </div>
-            </div>
+    <div className="globalBoard">
+      <div className="searchBar">
+        <input
+          id="search"
+          type="select"
+          name="search"
+          placeholder="  Search project"
+          className="input"
+        />
+        
+        <input
+          id="select"
+          type="select"
+          name="select"
+          placeholder="  type"
+        />
+        <button className="buttonBoard" type="button">SEARCH</button>
+      </div>
+      <div className="ProjectsBoard">
+        <h2>PROJECTS IN PROGRESS</h2>
+       </div>
+        <div className="blocCard">{/* <CardDashboard /> */}</div>
       
+      <div className="ProjectsBoard">
+        <h2>PROJECTS IN IDEAS</h2>
+        </div>
+        <div className="blocCard">{/* <CardDashboard /> */}</div>
       
     </div>
   );

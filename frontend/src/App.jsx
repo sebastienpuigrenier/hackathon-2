@@ -20,7 +20,6 @@ function App() {
           <Route path="/form" element={<ProjectForm />} />
           <Route path="/project" element={<Project />} />
           <Route path="/*" element={<Error404 />} />
-         
         </Routes>
       </div>
     </div>
