@@ -42,6 +42,10 @@ class AuthController {
         });
     });
   };
+
+  static logout = (req, res) => {
+    res.clearCookie("user_token").sendStatus(200);
+  };
 }
 
 module.exports = AuthController;

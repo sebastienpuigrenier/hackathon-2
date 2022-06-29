@@ -11,5 +11,6 @@ router.post("/items", ItemController.add);
 router.delete("/items/:id", ItemController.delete);
 
 router.post("/auth", AuthController.session);
+router.post("/auth/logout", AuthController.logout);
 
 module.exports = router;
