@@ -1,21 +1,15 @@
-import React, { createContext, useState, useEffect } from "react";
+import React, { createContext, useState } from "react";
 
 const Context = createContext();
 
 function Provider({ children }) {
-  // Ajouter ici vos useState pour créer un state dans le context
-  const [exemple, setExemple] = useState("");
-
-  // Ajouter ici si besoin le useEffect de votre state
-  useEffect(() => {
-    setExemple("");
-  }, []);
+  const [isLog, setIsLog] = useState(true);
 
   return (
     <Context.Provider
       value={{
-        // Ajouter ici vos variables a passer dans le context
-        exemple,
+        isLog,
+        setIsLog,
       }}
     >
       {children}
