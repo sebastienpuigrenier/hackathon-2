@@ -3,12 +3,12 @@
 
 :root {
   /* Color */
-  --color-white: #f0f2f5;
+  --color-white: #fcfcfc;
   --color-orange: #e79759;
   --color-blue: #183650;
   --color-black: #050505;
   --color-gray: #464646;
-  --color-light-gray: ##F2F2F2;
+  --color-light-gray: #F2F2F2;
 
   /* Font */
   --font-h1: "Montserrat", sans-serif;
