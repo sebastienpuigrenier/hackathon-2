@@ -9,6 +9,7 @@ import Project from "@pages/Project";
 import Error404 from "@pages/Error404";
 
 import "./styles/App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (

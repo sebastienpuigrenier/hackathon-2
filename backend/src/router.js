@@ -6,9 +6,14 @@ const {
   LanguagesController,
   CommentsController,
   UsersProjectsController,
+  AuthController,
+  UsersController,
 } = require("./controllers");
 
 const router = express.Router();
+
+router.get("/users", UsersController.browse);
+router.get("/users/:email", UsersController.read);
 
 router.get("/projects", ProjectsController.browse);
 router.get("/projects/:id", ProjectsController.read);
