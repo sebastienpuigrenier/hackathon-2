@@ -1,14 +1,23 @@
 const express = require("express");
 
 const {
+  UsersController,
   ProjectsController,
   KeywordsController,
   LanguagesController,
   CommentsController,
   UsersProjectsController,
+  ProjectsLanguagesController,
+  ProjectsKeywordsController,
 } = require("./controllers");
 
 const router = express.Router();
+
+router.get("/users", UsersController.browse);
+router.get("/users/:id", UsersController.read);
+router.get("/users/:email", UsersController.readByEmail);
+router.post("/users", UsersController.add);
+router.delete("/users/:id", UsersController.delete);
 
 router.get("/projects", ProjectsController.browse);
 router.get("/projects/:id", ProjectsController.read);
@@ -38,6 +47,22 @@ router.post("/usersProjects", UsersProjectsController.add);
 router.delete(
   "/usersProjects/:user_id&:project_id",
   UsersProjectsController.delete
+);
+
+router.get("/projectsLanguages", ProjectsLanguagesController.browse);
+router.get("/projectsLanguages/projects/:id", ProjectsLanguagesController.read);
+router.post("/projectsLanguages", ProjectsLanguagesController.add);
+router.delete(
+  "/projectsLanguages/:language_id&:project_id",
+  ProjectsLanguagesController.delete
+);
+
+router.get("/projectsKeywords", ProjectsKeywordsController.browse);
+router.get("/projectsKeywords/projects/:id", ProjectsKeywordsController.read);
+router.post("/projectsKeywords", ProjectsKeywordsController.add);
+router.delete(
+  "/projectsKeywords/:keywords_id&:project_id",
+  ProjectsKeywordsController.delete
 );
 
 module.exports = router;
