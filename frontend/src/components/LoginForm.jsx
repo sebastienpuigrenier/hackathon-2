@@ -52,33 +52,38 @@ function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmitLogin} className="container-loginForm">
-      <div>
-        <label htmlFor="email">
-          <p>Email</p>
-          <input
-            type="email"
-            name="email"
-            value={loginValue.email}
-            onChange={handleChangeLogin}
-          />
-        </label>
-      </div>
-      <div>
-        <label htmlFor="password">
-          <p>Password</p>
-          <input
-            type="password"
-            name="password"
-            value={loginValue.password}
-            onChange={handleChangeLogin}
-          />
-        </label>
-      </div>
-      <div>
-        <button type="submit">Login</button>
-      </div>
-    </form>
+    <div className="container-loginForm">
+      <form onSubmit={handleSubmitLogin}>
+        <div className="form">
+          <label htmlFor="email">
+            <input
+              type="email"
+              placeholder="MAIL"
+              className="input"
+              name="email"
+              value={loginValue.email}
+              onChange={handleChangeLogin}
+            />
+          </label>
+          <label htmlFor="password">
+            <input
+              type="password"
+              placeholder="PASSWORD"
+              className="input"
+              name="password"
+              value={loginValue.password}
+              onChange={handleChangeLogin}
+            />
+          </label>
+        </div>
+        <div>
+          <button type="submit" className="button-login">
+            LOG IN
+          </button>
+          <p className="forgot-password">Mot de passe oublié</p>
+        </div>
+      </form>
+    </div>
   );
 }
 

@@ -4,14 +4,53 @@
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
-  width: 100%;
-  height: 400%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
 }
 
 .container-loginForm {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  vertical-align: center;
-  width: 10%;
-  height: 40%;
+  justify-content: center;
+  width: 23rem;
+  height: 14rem;
+  background-color: var(--color-white);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+  margin-bottom: 0.8rem;
+  padding-left: 0.4rem;
+}
+
+.button-login {
+  width: 15rem;
+  height: 2rem;
+  color: var(--color-blue);
+  background-color: var(--color-orange);
+  font-size: var(--XS);
+  font-weight: var(--extra-bold);
+  font-family: var(--font-h1);
+  border-radius: 0.2rem;
+  -webkit-box-shadow: 0px 5px 10px -3px rgba(161, 159, 159, 0.88);
+  box-shadow: 0px 5px 10px -3px rgba(161, 159, 159, 0.88);
+  border: none;
+  margin-bottom: 0.5rem;
+}
+
+.forgot-password {
+  text-align: center;
+  font-size: var(--XS);
 }
