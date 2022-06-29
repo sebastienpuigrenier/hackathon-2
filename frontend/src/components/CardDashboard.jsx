@@ -2,9 +2,7 @@ import React from "react";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
 
-export default function CardDashboard({info}) {
-    console.log("coucou");
-    console.log(info);
+export default function CardDashboard({ info }) {
   return (
     <div className="container-card">
       <div className="card-top">
