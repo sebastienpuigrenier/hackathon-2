@@ -1,11 +1,15 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { api } from "@services/services";
 
 import ExportContext from "../contexts/Context";
 import "../styles/Home.css";
 
 function LoginForm() {
-  const { setIsLog } = useContext(ExportContext.Context);
+  const navigate = useNavigate();
+  const { setIsLog, setUserContext, userContext } = useContext(
+    ExportContext.Context
+  );
 
   const [loginValue, setLoginValue] = useState({
     email: "",
@@ -24,8 +28,16 @@ function LoginForm() {
         },
         { withCredentials: true }
       )
-      .then(() => {
+      .then((res) => {
         setIsLog(true);
+        setUserContext({
+          ...userContext,
+          email: res.data.email,
+          firstname: res.data.firstname,
+          lastname: res.data.lastname,
+          site: res.data.site,
+        });
+        navigate("/board");
       })
       .catch((error) => {
         console.error(error);
