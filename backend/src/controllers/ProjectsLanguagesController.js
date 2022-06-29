@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class UsersController {
+class ProjectsLanguagesController {
   static browse = (req, res) => {
-    models.users
+    models.projects_languages
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -14,24 +14,8 @@ class UsersController {
   };
 
   static read = (req, res) => {
-    models.users
-      .find(req.params.id)
-      .then(([rows]) => {
-        if (rows[0] == null) {
-          res.sendStatus(404);
-        } else {
-          res.send(rows[0]);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
-  static readByEmail = (req, res) => {
-    models.users
-      .findByEmail(req.params.email)
+    models.projects_languages
+      .findByProjectId(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
@@ -46,12 +30,12 @@ class UsersController {
   };
 
   static add = (req, res) => {
-    const user = req.body;
+    const projectsLanguages = req.body;
 
-    models.users
-      .insert(user)
-      .then(([result]) => {
-        res.status(201).send({ ...user, id: result.insertId });
+    models.projects_languages
+      .insert(projectsLanguages)
+      .then(() => {
+        res.status(201).send({ ...projectsLanguages });
       })
       .catch((err) => {
         console.error(err);
@@ -60,8 +44,8 @@ class UsersController {
   };
 
   static delete = (req, res) => {
-    models.users
-      .delete(req.params.id)
+    models.projects_languages
+      .delete(req.params.language_id, req.params.project_id)
       .then(() => {
         res.sendStatus(204);
       })
@@ -72,4 +56,4 @@ class UsersController {
   };
 }
 
-module.exports = UsersController;
+module.exports = ProjectsLanguagesController;
