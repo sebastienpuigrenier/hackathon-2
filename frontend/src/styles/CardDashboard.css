@@ -8,6 +8,7 @@
   padding: 1em;
   border-radius: 9px;
   color: var(--color-gray);
+  margin: 2rem;
 }
 
 .card-top {

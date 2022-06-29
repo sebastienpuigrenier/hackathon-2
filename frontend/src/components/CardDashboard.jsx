@@ -2,12 +2,14 @@ import React from "react";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
 
-export default function CardDashboard() {
+export default function CardDashboard({info}) {
+    console.log("coucou");
+    console.log(info);
   return (
     <div className="container-card">
       <div className="card-top">
         <div>
-          <h1 className="card-title">Project Title</h1>
+          <h1 className="card-title">{info.name}</h1>
         </div>
         <div className="card-thumb">
           <HiThumbUp size="22px" />
