@@ -40,7 +40,7 @@
 
 .user-name {
   color: var(--color-black);
-  font-size: var(--L)
+  font-size: var(--L);
 }
 
 .log-out {

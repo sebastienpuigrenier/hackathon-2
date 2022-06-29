@@ -1,4 +1,5 @@
 import { Route, Routes } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
 
 import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
@@ -22,6 +23,7 @@ function App() {
           <Route path="/*" element={<Error404 />} />
         </Routes>
       </div>
+      <ToastContainer />
     </div>
   );
 }

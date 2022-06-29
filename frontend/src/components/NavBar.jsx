@@ -8,7 +8,7 @@ import "../styles/Navbar.css";
 import ExportContext from "../contexts/Context";
 
 function NavBar() {
-  const { isLog, setIsLog } = useContext(ExportContext.Context);
+  const { isLog } = useContext(ExportContext.Context);
 
   const getActiveLinkStyle = ({ isActive }) => {
     if (isActive) {
@@ -49,12 +49,20 @@ function NavBar() {
         <div className="navbar-links">
           <ul>
             <li>
-              <NavLink to="/board" className="navLink" style={getActiveLinkStyle}>
+              <NavLink
+                to="/board"
+                className="navLink"
+                style={getActiveLinkStyle}
+              >
                 <p>Dashboard</p>
               </NavLink>
             </li>
             <li>
-              <NavLink to="/form" className="navLink" style={getActiveLinkStyle}>
+              <NavLink
+                to="/form"
+                className="navLink"
+                style={getActiveLinkStyle}
+              >
                 <p>Add a project</p>
               </NavLink>
             </li>
@@ -75,23 +83,6 @@ function NavBar() {
       </ul>
     );
   };
-
-  console.warn(setIsLog);
-
-  // return (
-  //   <div className="container-navbar">
-  //     <div className="navbar-logo">
-  //       <img src={logo} alt="logo" className="logo" />
-  //     </div>
-  //     <div className="navbar-info">
-  //       <div className="navbar-links">{isLog ? navLogged() : navLogout()}</div>
-  //       <div className="navbar-footer">
-  //         <p>CONTACT US</p>
-  //         <p>ALL RIGHT RESERVED - GCU</p>
-  //       </div>
-  //     </div>
-  //   </div>
-  // );
 
   return (
     <div className="container-navbar">
