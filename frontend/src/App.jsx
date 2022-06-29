@@ -4,6 +4,7 @@ import { ToastContainer } from "react-toastify";
 import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
 import ProjectForm from "@pages/ProjectForm";
+import ProjectsBoard from "@pages/ProjectsBoard";
 import Project from "@pages/Project";
 import ProjectsBoard from "@pages/ProjectsBoard";
 import Error404 from "@pages/Error404";
