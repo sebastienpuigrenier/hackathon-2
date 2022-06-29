@@ -7,7 +7,7 @@ import "../styles/Navbar.css";
 import ExportContext from "../contexts/Context";
 
 function NavBar() {
-  const { isLog, setIsLog } = useContext(ExportContext.Context);
+  const { isLog } = useContext(ExportContext.Context);
 
   const navLogged = () => {
     return (
@@ -34,8 +34,6 @@ function NavBar() {
       </ul>
     );
   };
-
-  console.warn(setIsLog);
 
   return (
     <div className="container-navbar">
