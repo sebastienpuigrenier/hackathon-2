@@ -52,20 +52,17 @@ CREATE TABLE `COMMENTS` (
 
 CREATE TABLE `USERS_PROJECTS` (
   `user_id` VARCHAR(255) NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`user_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `PROJECTS_KEYWORDS` (
   `keyword_id` INT NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`keyword_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `PROJECTS_LANGUAGES` (
   `language_id` INT NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`language_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `COMMENTS` ADD FOREIGN KEY (`user_id`) REFERENCES `USERS` (`id`);
