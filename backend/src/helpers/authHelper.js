@@ -16,9 +16,9 @@ const verifyPassword = (password, hashedPassword) => {
   return argon2.verify(hashedPassword, password);
 };
 
-const JWTTokenCreator = (userEmail, firstName, lastName) => {
+const JWTTokenCreator = (firstname, lastname, email, fonction, site) => {
   return jwt.sign(
-    { email: userEmail, firstName, lastName },
+    { firstname, lastname, email, fonction, site },
     process.env.PRIVATE_KEY
   );
 };

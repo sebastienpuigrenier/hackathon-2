@@ -1,13 +1,23 @@
+const models = require("../models");
+const { JWTTokenCreator } = require("../helpers/authHelper");
+const auth = require("../helpers/authHelper");
+
 class AuthController {
-  /*
   static session = (req, res) => {
-        model.findByEmail(req.body.email).then((user) => {
-      const { email, password, etat } = user[0][0];
+    models.users.findByEmail(req.body.email).then((user) => {
+      const { firstname, lastname, email, fonction, site, password } =
+        user[0][0];
       auth
         .verifyPassword(req.body.password, password)
         .then((isVerify) => {
           if (isVerify) {
-            const token = JWTTokenCreator(email, req.body.userType, etat);
+            const token = JWTTokenCreator(
+              firstname,
+              lastname,
+              email,
+              fonction,
+              site
+            );
             res
               .status(201)
               .cookie("user_token", token, {
@@ -17,9 +27,11 @@ class AuthController {
               .json({
                 message: "Le mot de passe est correct",
                 cookie: token,
+                firstname,
+                lastname,
                 email,
-                role: req.body.userType,
-                etat,
+                fonction,
+                site,
               });
           } else {
             res.status(401).send("Email ou mot de passe incorect");
@@ -29,7 +41,7 @@ class AuthController {
           res.status(401).send("Email ou mot de passe incorect");
         });
     });
-  }; */
+  };
 }
 
 module.exports = AuthController;
