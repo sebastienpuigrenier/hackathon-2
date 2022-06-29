@@ -1,13 +1,23 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 function NavBar() {
   return (
     <nav>
-      <h1>Ceci est la NavBar</h1>
-      <ul>
-        <li>Lien 1</li>
-        <li>Lien 1</li>
-      </ul>
+      <div className="navbar">
+        <ul>
+          <NavLink to="/" className="">
+            <li>Home</li>
+          </NavLink>
+          <NavLink to="/board" className="">
+            <li>Projects list</li>
+          </NavLink>
+          <NavLink to="/form" className="">
+            <li>Submit project</li>
+          </NavLink>
+        </ul>
+        <button type="button">Log out</button>
+      </div>
     </nav>
   );
 }
