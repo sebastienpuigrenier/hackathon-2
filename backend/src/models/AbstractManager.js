@@ -22,7 +22,7 @@ class AbstractManager {
 
   findByEmail(email) {
     return this.connection.query(
-      `select firstname, lastname, email, fonction, site, password from  ${this.table} where email = ?`,
+      `select id, firstname, lastname, email, fonction, site, password from  ${this.table} where email = ?`,
       [email]
     );
   }
