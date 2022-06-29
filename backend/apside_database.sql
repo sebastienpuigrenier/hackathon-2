@@ -16,6 +16,7 @@ CREATE TABLE `PROJECTS` (
   `id` VARCHAR(255) NOT NULL,
   `name` VARCHAR(100) NOT NULL,
   `description` VARCHAR(1500) NOT NULL,
+  `goals` VARCHAR(1500) NOT NULL,
   `customer` VARCHAR(255) NOT NULL,
   `status` VARCHAR(100) NOT NULL,
   `creation_date` DATE NOT NULL,
@@ -45,25 +46,23 @@ CREATE TABLE `COMMENTS` (
   `comment` VARCHAR(500) NOT NULL,
   `user_id` VARCHAR(255) NOT NULL,
   `project_id` VARCHAR(255) NOT NULL,
+  `creation_date` DATE NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `USERS_PROJECTS` (
   `user_id` VARCHAR(255) NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`user_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `PROJECTS_KEYWORDS` (
   `keyword_id` INT NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`keyword_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 CREATE TABLE `PROJECTS_LANGUAGES` (
   `language_id` INT NOT NULL,
-  `project_id` VARCHAR(255) NOT NULL,
-  PRIMARY KEY (`language_id`, `project_id`)
+  `project_id` VARCHAR(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 ALTER TABLE `COMMENTS` ADD FOREIGN KEY (`user_id`) REFERENCES `USERS` (`id`);
@@ -84,13 +83,13 @@ INSERT INTO  `USERS` (`id`, `firstname`, `lastname`, `email`, `password`, `fonct
 
 
 
-INSERT INTO `PROJECTS` (`id`,`name`, `description`,`customer`, `status`, `creation_date`, `update_to_project_date`, `update_to_finish_date`,
+INSERT INTO `PROJECTS` (`id`,`name`, `description`, `goals`, `customer`, `status`, `creation_date`, `update_to_project_date`, `update_to_finish_date`,
  `belonging_site`, `nb_likes`, `user_id`) VALUES
- ('ilytkfqngrotuihg15687651','DEPARTMENT REORGANISATION','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-'APSIDE', 'PROJECT', '2020-03-01','2021-02-15', '0000/00/00', 'STRASBOURG', 0, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
-('ilytkfqngrotui31687651','INTEGRATION OF NEW COLLABORATORS','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
-'APSIDE', 'PROJECT', '2019-12-12', '2020-02-12','0000/00/00', 'STRASBOURG', 8, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
-('lykfjgklftylg8523164','COMPUTERISED DOCUMENT MANAGEMENT','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+ ('ilytkfqngrotuihg15687651','DEPARTMENT REORGANISATION','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+'APSIDE', 'PROJECT', '2020-03-01','2021-02-15', '1900-01-01', 'STRASBOURG', 0, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
+('ilytkfqngrotui31687651','INTEGRATION OF NEW COLLABORATORS','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+'APSIDE', 'PROJECT', '2019-12-12', '2020-02-12','1900-01-01', 'STRASBOURG', 8, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
+('lykfjgklftylg8523164','COMPUTERISED DOCUMENT MANAGEMENT','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
 'APSIDE', 'FINISHED','2018-09-11','2019-02-11','2019-09-20', 'ANGERS', 26, '2c40b2c4-755a-4d90-bcb9-155ff4083325');
 
 
@@ -107,10 +106,10 @@ INSERT INTO `LANGUAGES` (`id`, `language`) VALUES
 (4, "ruby");
 
 
-INSERT INTO `COMMENTS` (`id`, `comment`, `user_id`, `project_id`) VALUES
-(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083324', 'ilytkfqngrotuihg15687651'),
-(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083324', 'lykfjgklftylg8523164'),
-(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083327', 'ilytkfqngrotuihg15687651');
+INSERT INTO `COMMENTS` (`id`, `comment`, `user_id`, `project_id`, `creation_date`) VALUES
+(1, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083324', 'ilytkfqngrotuihg15687651','2022-06-20'),
+(2, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083324', 'lykfjgklftylg8523164','2022-06-18'),
+(3, 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.', '2c40b2c4-755a-4d90-bcb9-155ff4083327', 'ilytkfqngrotuihg15687651','2022-06-15');
 
 
 INSERT INTO `USERS_PROJECTS` (`user_id`, `project_id`) VALUES
