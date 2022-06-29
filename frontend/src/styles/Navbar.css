@@ -1,8 +1,76 @@
 .container-navbar {
-  width: 30%;
+  display: flex;
+  background-color: var(--color-light-gray);
+  width: 20vw;
+  height: 100vh;
+  font-family: var(--font-h1);
+  border-right: 0.5rem solid var(--color-orange);
+  text-align: center;
+  align-items: center;
+  justify-content: space-between;
+  align-content: stretch;
+  flex-direction: column;
 }
 
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 6rem;
+}
 .logo {
-  width: 12%;
+  width: 75%;
   height: auto;
+}
+
+.navbar-links-logged {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 35vh;
+}
+
+.navbar-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.user-name {
+  color: var(--color-black);
+  font-size: var(--L);
+}
+
+.log-out {
+  width: 1.5rem;
+}
+
+.container-navbar ul li {
+  list-style-type: none;
+}
+
+.navLink {
+  color: var(--color-blue);
+  font-size: var(--M);
+}
+
+.navLink:hover {
+  text-decoration: underline var(--color-orange);
+  color: var(--color-orange);
+}
+
+.navbar-footer p {
+  font-size: var(--XS);
+  color: var(--color-black);
+}
+
+.navbar-profile {
+  margin-bottom: 5rem;
+  margin-top: -10rem;
+}
+
+.navbar-links {
+  margin-bottom: 7rem;
 }
