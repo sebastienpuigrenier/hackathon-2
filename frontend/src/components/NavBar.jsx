@@ -8,7 +8,7 @@ import "../styles/Navbar.css";
 import ExportContext from "../contexts/Context";
 
 function NavBar() {
-  const { isLog } = useContext(ExportContext.Context);
+  const { isLog, userContext } = useContext(ExportContext.Context);
 
   const getActiveLinkStyle = ({ isActive }) => {
     if (isActive) {
@@ -24,7 +24,7 @@ function NavBar() {
     return (
       <div className="navbar-links-logged">
         <div className="navbar-profile">
-          <p className="user-name">Eugène</p>
+          <p className="user-name">{`${userContext.firstname} ${userContext.lastname}`}</p>
           <ul>
             <li>
               <NavLink
