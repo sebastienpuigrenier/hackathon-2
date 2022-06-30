@@ -51,3 +51,7 @@
 .collaborator {
   display: flex;
 }
+
+.thumbUp {
+  font-size: var(--M)
+}

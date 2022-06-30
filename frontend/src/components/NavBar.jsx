@@ -65,6 +65,15 @@ function NavBar() {
             <ul>
               <li>
                 <NavLink
+                  to="/project"
+                  className="navLink"
+                  style={getActiveLinkStyle}
+                >
+                  <p>DetailProject</p>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
                   to="/dashboard"
                   className="navLink"
                   style={getActiveLinkStyle}
