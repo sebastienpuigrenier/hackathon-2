@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "../styles/ProjectsBoard.css";
 import axios from "axios";
 import CardDashboard from "@components/CardDashboard";
+import SearchBar from "@components/SearchBar";
 
 function ProjectsBoard() {
   const [arrayData, setarrayData] = useState([]);
@@ -20,20 +21,7 @@ function ProjectsBoard() {
 
   return (
     <div className="globalBoard">
-      <div className="searchBar">
-        <input
-          id="search"
-          type="select"
-          name="search"
-          placeholder="  Search project"
-          className="input"
-        />
-
-        <input id="select" type="select" name="select" placeholder="  type" />
-        <button className="buttonBoard" type="button">
-          SEARCH
-        </button>
-      </div>
+      <SearchBar />
       <div className="ProjectsBoard">
         <h2>PROJECTS IN PROGRESS</h2>
       </div>
