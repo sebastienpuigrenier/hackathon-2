@@ -16,7 +16,7 @@ const router = express.Router();
 
 router.get("/users", UsersController.browse);
 router.get("/users/:id", UsersController.read);
-router.get("/users/:email", UsersController.readByEmail);
+router.get("/users/email/:email", UsersController.readByEmail);
 router.post("/users", UsersController.add);
 router.delete("/users/:id", UsersController.delete);
 
@@ -68,6 +68,6 @@ router.delete(
 );
 
 router.post("/auth", AuthController.session);
-router.post("/auth/logout", AuthController.logout);
+router.get("/auth/logout", AuthController.logout);
 
 module.exports = router;
