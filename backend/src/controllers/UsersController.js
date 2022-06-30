@@ -1,8 +1,8 @@
 const models = require("../models");
 
-class CommentsController {
+class UsersController {
   static browse = (req, res) => {
-    models.comments
+    models.users
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -13,21 +13,8 @@ class CommentsController {
       });
   };
 
-  static browseByProject = (req, res) => {
-    const projectId = req.params.id;
-    models.comments
-      .findByProject(projectId)
-      .then(([rows]) => {
-        res.send(rows);
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static read = (req, res) => {
-    models.comments
+    models.users
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -42,13 +29,41 @@ class CommentsController {
       });
   };
 
-  static add = (req, res) => {
-    const comment = req.body;
+  static readByEmail = (req, res) => {
+    models.users
+      .findByEmail(req.params.email)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.sendStatus(404);
+        } else {
+          res.send(rows[0]);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 
-    models.comments
-      .insert(comment)
+  static add = (req, res) => {
+    const user = req.body;
+
+    models.users
+      .insert(user)
       .then(([result]) => {
-        res.status(201).send({ ...comment, id: result.insertId });
+        res.status(201).send({ ...user, id: result.insertId });
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static delete = (req, res) => {
+    models.users
+      .delete(req.params.id)
+      .then(() => {
+        res.sendStatus(204);
       })
       .catch((err) => {
         console.error(err);
@@ -57,4 +72,4 @@ class CommentsController {
   };
 }
 
-module.exports = CommentsController;
+module.exports = UsersController;

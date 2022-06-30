@@ -3,12 +3,13 @@ import { ToastContainer } from "react-toastify";
 
 import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
-import ProjectsBoard from "@pages/ProjectsBoard";
 import ProjectForm from "@pages/ProjectForm";
+import ProjectsBoard from "@pages/ProjectsBoard";
 import Project from "@pages/Project";
 import Error404 from "@pages/Error404";
 
 import "./styles/App.css";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (

@@ -5,20 +5,21 @@ class ProjectsManager extends AbstractManager {
 
   insert(project) {
     return this.connection.query(
-      `insert into ${ProjectsManager.table} (id, name, description, customer, status, creation_date, update_to_project_date, update_to_finish_date,
-  belonging_site, nb_likes, notation, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
+      `insert into ${ProjectsManager.table} (id, name, description, goals, customer, status, creation_date, update_to_project_date, update_to_finish_date,
+  belonging_site, nb_likes, notation, user_id) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`,
       [
         project.id,
         project.name,
         project.description,
+        project.goals,
         project.customer,
         project.status,
         project.creation_date,
-        project.update_to_project_date,
-        project.update_to_finish_date,
+        null,
+        null,
         project.belonging_site,
-        project.nb_likes,
-        project.notation,
+        0,
+        0,
         project.user_id,
       ]
     );
