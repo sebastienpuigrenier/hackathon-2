@@ -3,15 +3,22 @@ import { notifySuccess, notifyError, api } from "@services/services";
 import ExportContext from "../contexts/Context";
 
 function MessageBoard({ projectId }) {
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, "0");
+  const mm = String(today.getMonth() + 1).padStart(2, "0");
+  const yyyy = today.getFullYear();
+  today = `${yyyy}-${mm}-${dd}`;
   const { userContext } = useContext(ExportContext.Context);
   const [isMessageLimited, setIsMessageLimited] = useState(true);
+  const [update, setUpdate] = useState(false);
   const [commentLength, setCommentLength] = useState(0);
   const [newComment, setNewComment] = useState({
     firstname: userContext.firstname,
     lastname: userContext.lastname,
     email: userContext.email,
     site: userContext.site,
-    projectId,
+    project_id: projectId,
+    creation_date: today,
   });
   const [comments, setComments] = useState([]);
 
@@ -24,7 +31,7 @@ function MessageBoard({ projectId }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const ENDPOINTUSER = `/users/${newComment.email}`;
+    const ENDPOINTUSER = `/users/email/${newComment.email}`;
 
     api
       .get(ENDPOINTUSER, newComment)
@@ -48,6 +55,7 @@ function MessageBoard({ projectId }) {
         .post(ENDPOINT, newComment)
         .then(() => {
           notifySuccess("Your comment has been added to this project.");
+          setUpdate(!update);
         })
         .catch(() => {
           notifyError(
@@ -76,7 +84,7 @@ function MessageBoard({ projectId }) {
         setComments(result.data);
       }
     });
-  }, [isMessageLimited]);
+  }, [isMessageLimited, update]);
 
   return (
     <div>

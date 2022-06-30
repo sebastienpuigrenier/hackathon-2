@@ -15,8 +15,13 @@ class CommentsManager extends AbstractManager {
 
   insert(comment) {
     return this.connection.query(
-      `insert into ${CommentsManager.table} (comment, user_id, project_id) values (?, ?, ?)`,
-      [comment.comment, comment.user_id, comment.project_id]
+      `insert into ${CommentsManager.table} (comment, user_id, project_id, creation_date) values (?, ?, ?, ?)`,
+      [
+        comment.comment,
+        comment.user_id,
+        comment.project_id,
+        comment.creation_date,
+      ]
     );
   }
 }
