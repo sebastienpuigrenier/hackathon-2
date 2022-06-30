@@ -27,6 +27,8 @@
   --M: clamp(1.25rem, 2vw, 2.25rem);
   --L: clamp(1.25rem, 3vw, 2.25rem);
   --XL: clamp(2rem, 3.5vw, 4rem);
+
+  --width-navbar: 16rem;
 }
 
 a {
@@ -52,5 +54,7 @@ body {
 }
 
 .pages-content {
-  width: 80vw;
+  width: calc(100vw - var(--width-navbar));
+  overflow: scroll;
+
 }

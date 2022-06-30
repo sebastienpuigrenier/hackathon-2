@@ -32,6 +32,7 @@ class UsersController {
   static readByEmail = (req, res) => {
     models.users
       .findByEmail(req.params.email)
+
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
