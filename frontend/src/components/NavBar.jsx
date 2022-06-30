@@ -1,13 +1,15 @@
 import React, { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import logo from "@assets/logo.png";
 import { FiLogOut } from "react-icons/fi";
 import "../styles/Navbar.css";
 
+import { api } from "@services/services";
 import ExportContext from "../contexts/Context";
 
 function NavBar() {
+  const navigate = useNavigate();
   const { isLog } = useContext(ExportContext.Context);
 
   const getActiveLinkStyle = ({ isActive }) => {
@@ -19,6 +21,19 @@ function NavBar() {
       };
     }
     return null;
+  };
+
+  const logOut = () => {
+    const ENDPOINT = "/auth/logout";
+    api
+      .get(ENDPOINT)
+      .then(() => {
+        localStorage.clear();
+        navigate("/");
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
 
   const navLogged = () => {
@@ -37,13 +52,9 @@ function NavBar() {
               </NavLink>
             </li>
             <li>
-              <NavLink
-                to="/board"
-                className="navLink"
-                style={getActiveLinkStyle}
-              >
+              <button type="button" onClick={logOut}>
                 <FiLogOut />
-              </NavLink>
+              </button>
             </li>
           </ul>
         </div>
