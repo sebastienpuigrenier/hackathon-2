@@ -52,7 +52,7 @@ function NavBar() {
               </NavLink>
             </li>
             <li>
-              <button type="button" onClick={logOut}>
+              <button type="button" onClick={logOut} className="btn-logOut">
                 <FiLogOut />
               </button>
             </li>

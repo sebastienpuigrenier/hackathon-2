@@ -1,7 +1,7 @@
 .container-navbar {
   display: flex;
   background-color: var(--color-light-gray);
-  width: 20vw;
+  width: var(--width-navbar);
   height: 100vh;
   font-family: var(--font-h1);
   border-right: 0.5rem solid var(--color-orange);
@@ -43,8 +43,15 @@
   font-size: var(--M);
 }
 
-.log-out {
-  width: 1.5rem;
+.btn-logOut {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.btn-logOut:hover {
+  color: var(--color-orange);
+  transform: translateY(-1px) scale(1);
 }
 
 .container-navbar ul li {
