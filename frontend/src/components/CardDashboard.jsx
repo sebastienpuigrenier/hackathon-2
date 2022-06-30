@@ -2,8 +2,15 @@ import React, { useEffect, useState } from "react";
 import { api } from "@services/services";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
+import { api } from "@services/services";
 
 export default function CardDashboard({ info }) {
+
+  const likeProject = () => {
+    const ENDPOINT = `/projects/like/${info.id}`;
+    api.put(ENDPOINT);
+  };
+
   const projectId = info.id;
 
   const [keywordsArray, setKeywordsArray] = useState([]);
@@ -54,7 +61,9 @@ export default function CardDashboard({ info }) {
           <h1 className="card-title">{info.name}</h1>
         </div>
         <div className="card-thumb">
-          <HiThumbUp size="22px" />
+          <button type="button" onClick={likeProject}>
+            <HiThumbUp size="22px" />
+          </button>
         </div>
       </div>
       <div className="card-body">

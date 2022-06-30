@@ -99,6 +99,22 @@ class ProjectsController {
       });
   };
 
+  static modifyLike = (req, res) => {
+    models.projects
+      .likeProject(req.params.id)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static add = (req, res) => {
     const project = req.body;
 
