@@ -1,15 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { api } from "@services/services";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
+import { useNavigate } from "react-router-dom";
+import ExportContext from "../contexts/Context";
 
 export default function CardDashboard({ info }) {
+  const { setCurrentProject } = useContext(ExportContext.Context);
+
+  const projectId = info.id;
+  const navigate = useNavigate();
+
   const likeProject = () => {
     const ENDPOINT = `/projects/like/${info.id}`;
     api.put(ENDPOINT);
   };
 
-  const projectId = info.id;
+  const handleClick = (project) => {
+    setCurrentProject(project);
+    navigate("/project");
+  };
 
   const [keywordsArray, setKeywordsArray] = useState([]);
   const [languagesArray, setLanguagesArray] = useState([]);
@@ -53,7 +63,12 @@ export default function CardDashboard({ info }) {
   }, []);
 
   return (
-    <div className="container-card">
+    <div
+      role="button"
+      tabIndex={0}
+      className="container-card"
+      onClick={() => handleClick(projectId)}
+    >
       <div className="card-top">
         <div>
           <h1 className="card-title">{info.name}</h1>

@@ -1,11 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { api } from "@services/services";
 import MessageBoard from "@components/MessageBoard";
 import { HiThumbUp } from "react-icons/hi";
+import ExportContext from "../contexts/Context";
 import "../styles/Project.css";
 
 function Project() {
-  const projectId = "ilytkfqngrotuihg15687651";
+  const { currentProject } = useContext(ExportContext.Context);
+  const projectId = currentProject;
 
   const [detailProject, setDetailProject] = useState([]);
 
