@@ -74,7 +74,7 @@ export default function CardDashboard({ info }) {
           <h1 className="card-title">{info.name}</h1>
         </div>
         <div className="card-thumb">
-          <button type="button" onClick={likeProject}>
+          <button type="button" onClick={likeProject} className="button-like">
             <HiThumbUp size="22px" />
           </button>
         </div>

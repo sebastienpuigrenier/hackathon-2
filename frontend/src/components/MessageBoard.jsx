@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { notifySuccess, notifyError, api } from "@services/services";
 import ExportContext from "../contexts/Context";
+import "../styles/Comments.css";
 
 function MessageBoard({ projectId }) {
   let today = new Date();
@@ -88,24 +89,18 @@ function MessageBoard({ projectId }) {
 
   return (
     <div>
-      <div style={{ border: "2px solid red" }}>
+      <div className="comments-top">
         {comments.map((comment) => {
           return (
-            <div style={{ border: "2px solid green" }}>
-              <div
-                style={{
-                  display: "flex",
-                  gap: "0.5rem",
-                  justifyContent: "flex-end",
-                }}
-              >
-                <div>
+            <div>
+              <div className="comments-flex">
+                <div className="font-com">
                   {comment.firstname} {comment.lastname}
                 </div>
                 <div>
-                  <p> / </p>
+                  <p className="p-space-slash">/</p>
                 </div>
-                <div>
+                <div className="font-com">
                   {comment.creation_date
                     .slice(0, 10)
                     .split("-")
@@ -113,7 +108,7 @@ function MessageBoard({ projectId }) {
                     .join("-")}
                 </div>
               </div>
-              <div>{comment.comment}</div>
+              <div className="comments-part">{comment.comment}</div>
             </div>
           );
         })}
@@ -130,16 +125,17 @@ function MessageBoard({ projectId }) {
           <div>
             <label htmlFor="comment">
               <textarea
+                className="comment-area"
                 id="comment"
                 name="comment"
-                placeholder="Type your comment here"
+                placeholder="TYPE YOUR COMMENT"
                 onChange={handleChange}
               />
             </label>
           </div>
           <div className="submit_button">
             <button id="button_newProject" type="submit">
-              Create
+              Add
             </button>
           </div>
         </form>
