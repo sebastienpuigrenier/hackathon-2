@@ -30,7 +30,9 @@ export default function CardDashboard({ info }) {
         <div className="circle-contri">
           <p className="card-initials">GC</p>
         </div>
-        <p className="other-contributors">— and 5 more.</p>
+        <p className="other-contributors">
+          <span className="underline-off">—</span> and 5 more.
+        </p>
       </div>
       <div className="card-bottom">
         <p className="card-keywords">
