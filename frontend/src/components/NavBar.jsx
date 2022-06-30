@@ -56,7 +56,7 @@ function NavBar() {
               </li>
               <li>
                 <button type="button" onClick={logOut} className="btn-logOut">
-                  <FiLogOut />
+                  <FiLogOut size="23px" />
                 </button>
               </li>
             </ul>

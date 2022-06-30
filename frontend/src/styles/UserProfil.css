@@ -1,5 +1,9 @@
 .container-profil {
     margin: 2rem;
+    
+}
+
+.header-profil {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -24,7 +28,23 @@
 }
 
 .info-user {
+    margin-top: 4em;
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    align-items: center;
+    
+    margin-bottom: 3em;
+}
+
+.info-user > p {
+    font-size: var(--S);
+}
+
+.logo-avatar {
+    color: var(--color-blue);
+    margin-right: 3em;
+}
+
+.profile-projects {
+    font-size: 1.2em;
+    color: var(--color-gray);
 }

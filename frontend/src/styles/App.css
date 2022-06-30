@@ -46,14 +46,13 @@ a {
 body {
   background-color: var(--color-white);
 }
-
 .main-content {
   display: flex;
   justify-content: space-between;
   height: 100vh;
 }
 
-.pages-content {
-  width: calc(100vw - var(--width-navbar));
+.container {
+  max-width: 1400px;
   overflow: auto;
 }
