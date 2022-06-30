@@ -22,22 +22,44 @@ function ProjectsBoard() {
   return (
     <div className="globalBoard">
       <SearchBar />
-      <div className="ProjectsBoard">
-        <h2>PROJECTS IN PROGRESS</h2>
+      <div className="projects-category">
+        <div className="ProjectsBoard">
+          <h2>ongoing projects</h2>
+        </div>
+        <div className="blocCard">
+          {arrayData.map((card) => (
+            <CardDashboard info={card} key={card.id} />
+          ))}{" "}
+        </div>
+        <div className="more-cards">
+          <p>more</p>
+        </div>
       </div>
-      <div className="blocCard">
-        {arrayData.map((card) => (
-          <CardDashboard info={card} key={card.id} />
-        ))}{" "}
+      <div className="projects-category">
+        <div className="ProjectsBoard">
+          <h2>projects ideas</h2>
+        </div>
+        <div className="blocCard">
+          {arrayData.map((card) => (
+            <CardDashboard info={card} key={card.id} />
+          ))}{" "}
+        </div>
+        <div className="more-cards">
+          <p>more</p>
+        </div>
       </div>
-
-      <div className="ProjectsBoard">
-        <h2>PROJECTS IN IDEAS</h2>
-      </div>
-      <div className="blocCard">
-        {arrayData.map((card) => (
-          <CardDashboard info={card} key={card.id} />
-        ))}{" "}
+      <div className="projects-category">
+        <div className="ProjectsBoard">
+          <h2>completed projects</h2>
+        </div>
+        <div className="blocCard">
+          {arrayData.map((card) => (
+            <CardDashboard info={card} key={card.id} />
+          ))}{" "}
+        </div>
+        <div className="more-cards">
+          <p>more</p>
+        </div>
       </div>
     </div>
   );
