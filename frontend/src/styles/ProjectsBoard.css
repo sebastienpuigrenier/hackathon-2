@@ -39,3 +39,6 @@
   color: var(--color-blue);
   font-family: var(--font-p);
 }
+.blocCard{
+  display: flex;
+}
