@@ -1,5 +1,6 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { notifySuccess, notifyError, api } from "@services/services";
+import { v4 as uuidv4 } from "uuid";
 import projectStatus from "@services/projectStatus.json";
 import ExportContext from "../contexts/Context";
 
@@ -10,8 +11,10 @@ function ProjectForm() {
   const yyyy = today.getFullYear();
   today = `${yyyy}-${mm}-${dd}`;
 
+  const projectId = uuidv4();
   const { userContext } = useContext(ExportContext.Context);
-  const [newProject, setnewProject] = useState({
+  const [newProject, setNewProject] = useState({
+    id: projectId,
     firstname: userContext.firstname,
     lastname: userContext.lastname,
     email: userContext.email,
@@ -22,19 +25,23 @@ function ProjectForm() {
   });
 
   function handleChange(event) {
-    setnewProject({
+    setNewProject({
       ...newProject,
       [event.target.name]: event.target.value,
     });
   }
 
   const handleSubmit = (e) => {
-    const ENDPOINT = "/projects";
     e.preventDefault();
+    const ENDPOINTUSER = `/users/${newProject.email}`;
+
     api
-      .post(ENDPOINT, newProject)
-      .then(() => {
-        notifySuccess("Your idea is now propose to apside coworker.");
+      .get(ENDPOINTUSER, newProject)
+      .then((result) => {
+        setNewProject({
+          ...newProject,
+          user_id: result.data.id,
+        });
       })
       .catch(() => {
         notifyError(
@@ -42,6 +49,22 @@ function ProjectForm() {
         );
       });
   };
+
+  useEffect(() => {
+    if (newProject.user_id) {
+      const ENDPOINT = "/projects";
+      api
+        .post(ENDPOINT, newProject)
+        .then(() => {
+          notifySuccess("Your idea is now propose to apside coworker.");
+        })
+        .catch(() => {
+          notifyError(
+            "A problem occurs. Please check if all element are completed."
+          );
+        });
+    }
+  }, [newProject]);
 
   return (
     <div className="register">
@@ -54,9 +77,9 @@ function ProjectForm() {
               <label htmlFor="title">
                 <input
                   type="text"
-                  id="title"
-                  name="title"
-                  placeholder="Project title"
+                  id="name"
+                  name="name"
+                  placeholder="Project name"
                   onChange={handleChange}
                   required
                 />
