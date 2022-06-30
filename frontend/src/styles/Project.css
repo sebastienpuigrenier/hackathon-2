@@ -1,0 +1,26 @@
+.header-project {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-orange);
+  width: 80%;
+}
+
+.header-project h2 {
+  color: var(--color-blue);
+  font-family: var(--font-p);
+}
+
+.center-header {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0 5rem 0;
+}
+
+.title-project h2 {
+  font-size: 16px;
+  font-family: var(--font-h1);
+  color: var(--color-blue);
+  font-weight: var(--extra-bold);
+  text-transform: uppercase;
+  padding-bottom: 0.3em;
+}
