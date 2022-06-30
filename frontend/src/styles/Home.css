@@ -9,6 +9,7 @@
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: calc(100vw - var(--width-navbar));
 }
 
 .container-loginForm {

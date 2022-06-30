@@ -49,6 +49,19 @@ class ProjectsController {
       });
   };
 
+  static browseByCollaborator = (req, res) => {
+    const userid = req.params.id;
+    models.projects
+      .findAllWithCollaborator(userid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.projects
       .find(req.params.id)
@@ -86,6 +99,22 @@ class ProjectsController {
 
     models.projects
       .update(updatedProject, req.params.id)
+      .then(([result]) => {
+        if (result.affectedRows === 0) {
+          res.sendStatus(404);
+        } else {
+          res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static modifyLike = (req, res) => {
+    models.projects
+      .likeProject(req.params.id)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);

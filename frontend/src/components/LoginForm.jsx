@@ -37,7 +37,7 @@ function LoginForm() {
           lastname: res.data.lastname,
           site: res.data.site,
         });
-        navigate("/board");
+        navigate("/dashboard");
       })
       .catch((error) => {
         console.error(error);

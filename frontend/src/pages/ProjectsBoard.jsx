@@ -93,7 +93,7 @@ function ProjectsBoard() {
         <div className="blocCard">
           {arrayDataOngoing.map((card) => (
             <CardDashboard info={card} key={card.id} />
-          ))}{" "}
+          ))}
         </div>
         <div className="more-cards">
           <div

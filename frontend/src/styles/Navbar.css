@@ -41,6 +41,8 @@
 .user-name {
   color: var(--color-black);
   font-size: var(--M);
+  line-height: 1.9rem;
+  margin-bottom: 1rem;
 }
 
 .btn-logOut {
@@ -51,7 +53,7 @@
 
 .btn-logOut:hover {
   color: var(--color-orange);
-  transform: translateY(-1px) scale(1);
+  transform: translateY(-px) scale(1);
 }
 
 .container-navbar ul li {
