@@ -9,6 +9,13 @@ class LanguagesManager extends AbstractManager {
       [language.language]
     );
   }
+
+  findAllByProject(projectid) {
+    return this.connection.query(
+      `SELECT language FROM languages INNER JOIN projects_languages ON projects_languages.language_id = languages.id WHERE project_id = ?`,
+      [projectid]
+    );
+  }
 }
 
 module.exports = LanguagesManager;

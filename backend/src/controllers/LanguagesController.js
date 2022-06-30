@@ -42,6 +42,19 @@ class LanguagesController {
         res.sendStatus(500);
       });
   };
+
+  static browseByProject = (req, res) => {
+    const projectid = req.params.id;
+    models.languages
+      .findAllByProject(projectid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = LanguagesController;
