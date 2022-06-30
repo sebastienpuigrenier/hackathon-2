@@ -65,5 +65,12 @@ class ProjectsManager extends AbstractManager {
       [id]
     );
   }
+
+  likeProject(id) {
+    return this.connection.query(
+      `UPDATE projects SET nb_likes = nb_likes + 1 WHERE id="${id}"`,
+      [id]
+    );
+  }
 }
 module.exports = ProjectsManager;

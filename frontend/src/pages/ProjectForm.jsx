@@ -35,7 +35,7 @@ function ProjectForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const ENDPOINTUSER = `/users/${newProject.email}`;
+    const ENDPOINTUSER = `/users/email/${newProject.email}`;
 
     api
       .get(ENDPOINTUSER, newProject)

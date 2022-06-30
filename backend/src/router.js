@@ -16,6 +16,7 @@ const router = express.Router();
 
 router.get("/users", UsersController.browse);
 router.get("/users/byproject/:id", UsersController.browseByProject);
+router.get("/user/creator/:id", UsersController.browseCreator);
 router.get("/users/:id", UsersController.read);
 router.get("/users/email/:email", UsersController.readByEmail);
 router.post("/users", UsersController.add);
@@ -32,6 +33,7 @@ router.get(
 );
 router.get("/projects/complete/:id", ProjectsController.readComplete);
 router.put("/projects/:id", ProjectsController.modify);
+router.put("/projects/like/:id", ProjectsController.modifyLike);
 router.post("/projects", ProjectsController.add);
 router.delete("/projects/:id", ProjectsController.delete);
 
