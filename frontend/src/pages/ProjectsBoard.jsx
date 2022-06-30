@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../styles/ProjectsBoard.css";
-import axios from "axios";
+import { api } from "@services/services";
 import CardDashboard from "@components/CardDashboard";
 import SearchBar from "@components/SearchBar";
 
@@ -8,9 +8,9 @@ function ProjectsBoard() {
   const [arrayData, setarrayData] = useState([]);
 
   useEffect(() => {
-    const API = `http://localhost:5000/projects`;
+    const API = `/projects`;
 
-    axios
+    api
       .get(API)
       .then((res) => res.data)
       .then((cards) => {
