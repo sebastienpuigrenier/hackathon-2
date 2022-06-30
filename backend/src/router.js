@@ -28,6 +28,7 @@ router.get("/projects/finished/", ProjectsController.browseFinished);
 router.get("/projects/:id", ProjectsController.read);
 router.get("/projects/complete/:id", ProjectsController.readComplete);
 router.put("/projects/:id", ProjectsController.modify);
+router.put("/projects/like/:id", ProjectsController.modifyLike);
 router.post("/projects", ProjectsController.add);
 router.delete("/projects/:id", ProjectsController.delete);
 
