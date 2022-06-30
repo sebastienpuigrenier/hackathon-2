@@ -93,7 +93,7 @@ function Project() {
       <div className="section-project">
         <h2>Keywords</h2>
         {keywordsArray.map((e) => {
-          return <p> {e.keyword} </p>;
+          return <p> #{e.keyword} </p>;
         })}
       </div>
       <div className="ZONEDECOMMENTAIRE">
