@@ -26,6 +26,19 @@ class UsersController {
       });
   };
 
+  static browseCreator = (req, res) => {
+    const projectid = req.params.id;
+    models.users
+      .findCreator(projectid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.users
       .find(req.params.id)

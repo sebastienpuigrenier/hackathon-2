@@ -16,6 +16,7 @@ const router = express.Router();
 
 router.get("/users", UsersController.browse);
 router.get("/users/byproject/:id", UsersController.browseByProject);
+router.get("/user/creator/:id", UsersController.browseCreator);
 router.get("/users/:id", UsersController.read);
 router.get("/users/email/:email", UsersController.readByEmail);
 router.post("/users", UsersController.add);
