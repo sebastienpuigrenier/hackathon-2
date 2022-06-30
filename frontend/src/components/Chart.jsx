@@ -5,17 +5,20 @@ import { PieChart } from "react-minimal-pie-chart";
 function Chart() {
   const [arrayData, setarrayData] = useState([]);
   const [statOngoing, setStatOngoing] = useState({
-    catName: "ongoing",
+    title: "ongoing",
+    color: "#E38627",
   });
   const [statIdea, setStatIdea] = useState({
-    catName: "Idea",
+    title: "Idea",
+    color: "#C13C37",
   });
   const [statFinished, setStatFinished] = useState({
-    catName: "Finished",
+    title: "Finished",
+    color: "#6A2135",
   });
 
   useEffect(() => {
-    if (statOngoing.catNumber && statIdea.catNumber && statFinished.catNumber) {
+    if (statOngoing.value && statIdea.value && statFinished.value) {
       setarrayData([statOngoing, statIdea, statFinished]);
     }
   }, [statOngoing, statIdea, statFinished]);
@@ -28,52 +31,24 @@ function Chart() {
     api.get(ENDPOINT).then((result) => {
       setStatOngoing({
         ...statOngoing,
-        catNumber: result.length,
+        value: parseInt(result.data.length),
       });
     });
 
-    console.warn("statOngoing", statOngoing);
-
-    api.get(API).then((result) => {
+    api.get(API).then((resultat) => {
       setStatIdea({
         ...statIdea,
-        catNumber: result.length,
+        value: parseInt(resultat.data.length),
       });
     });
 
-    api.get(DATA).then((result) => {
+    api.get(DATA).then((resultFinished) => {
       setStatFinished({
         ...statFinished,
-        catNumber: result.length,
+        value: resultFinished.data.length,
       });
     });
   }, []);
-
-  console.warn("arrayData", arrayData);
-
-  //   const totalNumberOfProjects = arrayData.length;
-  //   console.log("totalNumberOfProjects", totalNumberOfProjects);
-
-  //   const numberOfProjects = arrayData.filter(
-  //     (project) => project.status === "PROJECT"
-  //   );
-  //   console.log("numberOfProjects", numberOfProjects);
-
-  //   const numberOfIdeas = arrayData.filter(
-  //     (project) => project.status === "IDEA"
-  //   );
-  //   console.log("numberOfIdeas", numberOfIdeas);
-
-  //   const numberOfFinished = arrayData.filter(
-  //     (project) => project.status === "FINISHED"
-  //   );
-  //   console.log("numberOfFinished", numberOfFinished);
-
-  //   const dataMock = [
-  //     { title: "One", value: 10, color: "#E38627" },
-  //     { title: "Two", value: 15, color: "#C13C37" },
-  //     { title: "Three", value: 20, color: "#6A2135" },
-  //   ];
 
   const defaultLabelStyle = {
     fontSize: "5px",
@@ -85,7 +60,10 @@ function Chart() {
       <PieChart
         data={arrayData}
         style={{ height: "300px" }}
-        label={({ dataEntry }) => `${Math.round(dataEntry.percentage)}%`}
+        label={({ dataEntry }) =>
+          // eslint-disable-next-line no-useless-concat
+          `${Math.round(dataEntry.percentage)}% ` + `${dataEntry.title}`
+        }
         labelStyle={defaultLabelStyle}
       />
     </div>
