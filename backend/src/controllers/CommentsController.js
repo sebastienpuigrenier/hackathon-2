@@ -15,8 +15,9 @@ class CommentsController {
 
   static browseByProject = (req, res) => {
     const projectId = req.params.id;
+    const islimited = req.params.limit;
     models.comments
-      .findByProject(projectId)
+      .findByProject(projectId, islimited)
       .then(([rows]) => {
         res.send(rows);
       })
@@ -44,7 +45,6 @@ class CommentsController {
 
   static add = (req, res) => {
     const comment = req.body;
-
     models.comments
       .insert(comment)
       .then(([result]) => {
