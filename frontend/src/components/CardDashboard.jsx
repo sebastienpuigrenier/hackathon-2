@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { api } from "@services/services";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
-import { api } from "@services/services";
 
 export default function CardDashboard({ info }) {
 
