@@ -18,13 +18,13 @@
   justify-content: center;
   margin: 3rem 0rem 3rem 0rem;
 }
-.searchBar > form > label > input {
+.searchBar > form > input {
   margin-right: 1rem;
   border-radius: 3px;
   height: 2rem;
   width: 15rem;
 }
-.searchBar > form > label > button {
+.searchBar > form > button {
   margin-right: 1rem;
   border-radius: 3px;
   height: 2rem;
