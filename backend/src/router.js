@@ -15,6 +15,7 @@ const {
 const router = express.Router();
 
 router.get("/users", UsersController.browse);
+router.get("/users/byproject/:id", UsersController.browseByProject);
 router.get("/users/:id", UsersController.read);
 router.get("/users/email/:email", UsersController.readByEmail);
 router.post("/users", UsersController.add);
@@ -31,10 +32,12 @@ router.post("/projects", ProjectsController.add);
 router.delete("/projects/:id", ProjectsController.delete);
 
 router.get("/keywords", KeywordsController.browse);
+router.get("/keywords/byproject/:id", KeywordsController.browseByProject);
 router.get("/keywords/:id", KeywordsController.read);
 router.post("/keywords", KeywordsController.add);
 
 router.get("/languages", LanguagesController.browse);
+router.get("/languages/byproject/:id", LanguagesController.browseByProject);
 router.get("/languages/:id", LanguagesController.read);
 router.post("/languages", LanguagesController.add);
 

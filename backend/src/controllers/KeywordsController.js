@@ -42,6 +42,19 @@ class KeywordsController {
         res.sendStatus(500);
       });
   };
+
+  static browseByProject = (req, res) => {
+    const projectid = req.params.id;
+    models.keywords
+      .findAllByProject(projectid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
 }
 
 module.exports = KeywordsController;

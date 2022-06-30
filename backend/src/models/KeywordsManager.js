@@ -9,6 +9,13 @@ class KeywordsManager extends AbstractManager {
       [Keywords.keyword]
     );
   }
+
+  findAllByProject(projectid) {
+    return this.connection.query(
+      `SELECT keyword FROM keywords INNER JOIN projects_keywords ON projects_keywords.keyword_id = keywords.id WHERE project_id = ?`,
+      [projectid]
+    );
+  }
 }
 
 module.exports = KeywordsManager;
