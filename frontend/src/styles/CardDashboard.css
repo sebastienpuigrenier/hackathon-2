@@ -2,13 +2,16 @@
 
 .container-card {
   background-color: var(--color-light-gray);
-  box-shadow: 3px 3px 10px rgba(114, 114, 114, 0.3);
-  max-width: 17em;
+  box-shadow: 4px 4px 8px rgba(114, 114, 114, 0.2);
+  width: 17em;
   max-height: 25em;
   padding: 1em;
   border-radius: 9px;
   color: var(--color-gray);
-  margin: 2rem;
+  margin: 1rem;
+}
+.container-card:hover {
+  transform: scale(1.02);
 }
 
 .card-top {
@@ -22,7 +25,7 @@
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 12px;
   font-family: var(--font-h1);
   color: var(--color-blue);
   font-weight: var(--extra-bold);
@@ -41,7 +44,6 @@
 
 .card-description {
   font-size: 12px;
-  max-height: 10em;
   padding-bottom: 1em;
 }
 
