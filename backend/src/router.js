@@ -35,6 +35,7 @@ router.get("/languages/:id", LanguagesController.read);
 router.post("/languages", LanguagesController.add);
 
 router.get("/comments", CommentsController.browse);
+router.get("/comments/project/:id", CommentsController.browseByProject);
 router.get("/comments/:id", CommentsController.read);
 router.post("/comments", CommentsController.add);
 

@@ -13,6 +13,19 @@ class CommentsController {
       });
   };
 
+  static browseByProject = (req, res) => {
+    const projectId = req.params.id;
+    models.comments
+      .findByProject(projectId)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.comments
       .find(req.params.id)
