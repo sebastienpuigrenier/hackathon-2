@@ -10,6 +10,13 @@ class UsersManager extends AbstractManager {
     );
   }
 
+  findAllByProject(projectid) {
+    return this.connection.query(
+      `SELECT firstname, lastname FROM users INNER JOIN users_projects ON users_projects.user_id = users.id WHERE project_id = ?`,
+      [projectid]
+    );
+  }
+
   insert(user) {
     return this.connection.query(
       `insert into ${UsersManager.table} (id, firstname, lastname, email, password, fonction, site) VALUES (?, ?, ?, ?, ?, ?, ?)`,
