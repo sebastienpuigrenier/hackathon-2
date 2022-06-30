@@ -1,13 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { api } from "@services/services";
 import "../styles/CardDashboard.css";
 import { HiThumbUp } from "react-icons/hi";
 import { api } from "@services/services";
 
 export default function CardDashboard({ info }) {
+
   const likeProject = () => {
     const ENDPOINT = `/projects/like/${info.id}`;
     api.put(ENDPOINT);
   };
+
+  const projectId = info.id;
+
+  const [keywordsArray, setKeywordsArray] = useState([]);
+  const [languagesArray, setLanguagesArray] = useState([]);
+  const [usersArray, setUsersArray] = useState([]);
+  const [creator, setCreator] = useState([]);
+
+  useEffect(() => {
+    const ENDPOINTKEYWORDS = `/keywords/byproject/${projectId}`;
+    const ENDPOINTLANGUAGES = `/languages/byproject/${projectId}`;
+    const ENDPOINTUSERS = `/users/byproject/${projectId}`;
+    const ENDPOINTCREATOR = `/user/creator/${projectId}`;
+
+    function getKeywords() {
+      return api.get(ENDPOINTKEYWORDS);
+    }
+
+    function getLanguages() {
+      return api.get(ENDPOINTLANGUAGES);
+    }
+    function getContributors() {
+      return api.get(ENDPOINTUSERS);
+    }
+    function getCreator() {
+      return api.get(ENDPOINTCREATOR);
+    }
+
+    Promise.all([
+      getKeywords(),
+      getLanguages(),
+      getContributors(),
+      getCreator(),
+    ]).then((results) => {
+      setKeywordsArray(results[0].data);
+      setLanguagesArray(results[1].data);
+      setUsersArray(results[2].data.length);
+      setCreator(
+        results[3].data[0].firstname.split("").slice(0, 1).join() +
+          results[3].data[0].lastname.split("").slice(0, 1).join()
+      );
+    });
+  }, []);
 
   return (
     <div className="container-card">
@@ -31,21 +76,26 @@ export default function CardDashboard({ info }) {
             {info.customer} {info.belonging_site}
           </p>
           <p className="card-language">Languages</p>
-          <p className="card-language-entry">javascript, HTML, CSS</p>
+          <p className="card-language-entry">
+            {languagesArray.map((e) => {
+              return `${e.language}, `;
+            })}
+          </p>
         </div>
       </div>
       <div className="card-contributors">
         <div className="circle-contri">
-          <p className="card-initials">GC</p>
+          <p className="card-initials">{creator}</p>
         </div>
         <p className="other-contributors">
-          <span className="underline-off">—</span> and 5 more.
+          {usersArray > 0 ? `and ${usersArray} more` : ""}
         </p>
       </div>
       <div className="card-bottom">
         <p className="card-keywords">
-          #idontknow #idontknow #idontknow #idontknow #idontknow #idontknow
-          #idontknow #idontknow
+          {keywordsArray.map((e) => {
+            return `#${e.keyword} `;
+          })}
         </p>
       </div>
     </div>
