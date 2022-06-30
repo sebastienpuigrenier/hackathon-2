@@ -84,7 +84,7 @@ function ProjectForm() {
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Project name"
+                  placeholder="PROJECT NAME"
                   onChange={handleChange}
                   required
                 />
@@ -97,7 +97,7 @@ function ProjectForm() {
                   type="text"
                   id="customer"
                   name="customer"
-                  placeholder="Customer"
+                  placeholder="CUSTOMER"
                   onChange={handleChange}
                   required
                 />
@@ -110,7 +110,7 @@ function ProjectForm() {
                   type="text"
                   id="languages"
                   name="languages"
-                  placeholder="Languages"
+                  placeholder="LANGUAGES"
                   onChange={handleChange}
                   required
                 />
@@ -123,7 +123,7 @@ function ProjectForm() {
                   type="text"
                   id="keywords"
                   name="keywords"
-                  placeholder="keywords #webdev #javascript"
+                  placeholder="KEYWORDS #WEBDEV #JAVASCRIPT"
                   onChange={handleChange}
                   required
                 />
@@ -135,7 +135,7 @@ function ProjectForm() {
                   className="description-form"
                   id="description"
                   name="description"
-                  placeholder="Description"
+                  placeholder="DESCRIPTION"
                   onChange={handleChange}
                 />
               </label>
@@ -146,7 +146,7 @@ function ProjectForm() {
                   className="goals-form"
                   id="goals"
                   name="goals"
-                  placeholder="Goals"
+                  placeholder="GOALS"
                   onChange={handleChange}
                 />
               </label>
