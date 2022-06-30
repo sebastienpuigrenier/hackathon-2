@@ -81,6 +81,15 @@ function NavBar() {
                   <p>Add a project</p>
                 </NavLink>
               </li>
+              <li>
+                <NavLink
+                  to="/statistics"
+                  className="navLink"
+                  style={getActiveLinkStyle}
+                >
+                  <p>Statistics</p>
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
