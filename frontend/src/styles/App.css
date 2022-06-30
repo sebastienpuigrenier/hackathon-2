@@ -46,14 +46,18 @@ a {
 body {
   background-color: var(--color-white);
 }
-
 .main-content {
   display: flex;
   justify-content: space-between;
   height: 100vh;
 }
 
-.pages-content {
-  width: calc(100vw - var(--width-navbar));
-  overflow: scroll;
+.container {
+  width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.container2 {
+  margin: 0 auto;
 }

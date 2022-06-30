@@ -43,20 +43,20 @@ function NavBar() {
       setMenuNavbar(
         <div className="navbar-links-logged">
           <div className="navbar-profile">
-            <p className="user-name">{`${userContext.firstname} ${userContext.lastname}`}</p>
+            <p className="user-name">{`Welcome ${userContext.firstname} ${userContext.lastname}`}</p>
             <ul>
               <li>
                 <NavLink
-                  to="/profile"
+                  to="/profil"
                   className="navLink"
                   style={getActiveLinkStyle}
                 >
-                  My profile
+                  My profil
                 </NavLink>
               </li>
               <li>
                 <button type="button" onClick={logOut} className="btn-logOut">
-                  <FiLogOut />
+                  <FiLogOut size="23px" />
                 </button>
               </li>
             </ul>
@@ -65,7 +65,16 @@ function NavBar() {
             <ul>
               <li>
                 <NavLink
-                  to="/board"
+                  to="/project"
+                  className="navLink"
+                  style={getActiveLinkStyle}
+                >
+                  <p>DetailProject</p>
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  to="/dashboard"
                   className="navLink"
                   style={getActiveLinkStyle}
                 >
