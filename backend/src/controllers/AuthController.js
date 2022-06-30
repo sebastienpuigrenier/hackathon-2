@@ -44,7 +44,7 @@ class AuthController {
   };
 
   static logout = (req, res) => {
-    res.clearCookie("user_token").sendStatus(200);
+    res.cookie("user_token", "").sendStatus(200);
   };
 }
 

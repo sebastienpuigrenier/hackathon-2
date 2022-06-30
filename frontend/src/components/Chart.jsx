@@ -4,38 +4,49 @@ import { PieChart } from "react-minimal-pie-chart";
 
 function Chart() {
   const [arrayData, setarrayData] = useState([]);
+  const [statOngoing, setStatOngoing] = useState({
+    catName: "ongoing",
+  });
+  const [statIdea, setStatIdea] = useState({
+    catName: "Idea",
+  });
+  const [statFinished, setStatFinished] = useState({
+    catName: "Finished",
+  });
 
   useEffect(() => {
-    const API = `/projects`;
+    if (statOngoing.catNumber && statIdea.catNumber && statFinished.catNumber) {
+      setarrayData([statOngoing, statIdea, statFinished]);
+    }
+  }, [statOngoing, statIdea, statFinished]);
 
-    api
-      .get(API)
-      .then((res) => res.data)
-      .then((data) => {
-        const categories = [];
-        console.warn("data", data);
+  useEffect(() => {
+    const ENDPOINT = "/projects/ongoing/";
+    const API = "/projects/idea/";
+    const DATA = "/projects/finished/";
 
-        data.status.forEach((proj) => categories.push(proj.status[0].id));
-
-        console.warn("categories", categories);
-
-        const uniqueCategories = [...new Set(categories)];
-        setarrayData(
-          uniqueCategories.map((cat) => {
-            let catCount = 0;
-            categories.forEach((c) => {
-              if (c === cat) {
-                catCount += 1;
-              }
-            });
-
-            return {
-              catName: cat,
-              catCount,
-            };
-          })
-        );
+    api.get(ENDPOINT).then((result) => {
+      setStatOngoing({
+        ...statOngoing,
+        catNumber: result.length,
       });
+    });
+
+    console.warn("statOngoing", statOngoing);
+
+    api.get(API).then((result) => {
+      setStatIdea({
+        ...statIdea,
+        catNumber: result.length,
+      });
+    });
+
+    api.get(DATA).then((result) => {
+      setStatFinished({
+        ...statFinished,
+        catNumber: result.length,
+      });
+    });
   }, []);
 
   console.warn("arrayData", arrayData);
@@ -59,7 +70,7 @@ function Chart() {
   //   console.log("numberOfFinished", numberOfFinished);
 
   //   const dataMock = [
-  //     { status: "One", value: 10, color: "#E38627" },
+  //     { title: "One", value: 10, color: "#E38627" },
   //     { title: "Two", value: 15, color: "#C13C37" },
   //     { title: "Three", value: 20, color: "#6A2135" },
   //   ];
