@@ -43,7 +43,7 @@ function NavBar() {
       setMenuNavbar(
         <div className="navbar-links-logged">
           <div className="navbar-profile">
-            <p className="user-name">{`${userContext.firstname} ${userContext.lastname}`}</p>
+            <p className="user-name">{`Welcome ${userContext.firstname} ${userContext.lastname}`}</p>
             <ul>
               <li>
                 <NavLink

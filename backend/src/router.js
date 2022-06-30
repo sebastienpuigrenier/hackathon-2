@@ -26,6 +26,10 @@ router.get("/projects/ongoing/", ProjectsController.browseOngoing);
 router.get("/projects/idea/", ProjectsController.browseIdea);
 router.get("/projects/finished/", ProjectsController.browseFinished);
 router.get("/projects/:id", ProjectsController.read);
+router.get(
+  "/projects/collaborator/:id",
+  ProjectsController.browseByCollaborator
+);
 router.get("/projects/complete/:id", ProjectsController.readComplete);
 router.put("/projects/:id", ProjectsController.modify);
 router.post("/projects", ProjectsController.add);

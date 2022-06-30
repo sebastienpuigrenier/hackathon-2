@@ -49,6 +49,19 @@ class ProjectsController {
       });
   };
 
+  static browseByCollaborator = (req, res) => {
+    const userid = req.params.id;
+    models.projects
+      .findAllWithCollaborator(userid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.projects
       .find(req.params.id)

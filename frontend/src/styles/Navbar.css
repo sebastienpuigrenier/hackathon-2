@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 35vh;
+  height: 45vh;
 }
 
 .navbar-info {
@@ -41,6 +41,8 @@
 .user-name {
   color: var(--color-black);
   font-size: var(--M);
+  line-height: 1.9rem;
+  margin-bottom: 1rem;
 }
 
 .btn-logOut {
@@ -75,7 +77,6 @@
 
 .navbar-profile {
   margin-bottom: 5rem;
-  margin-top: -10rem;
 }
 
 .navbar-links {

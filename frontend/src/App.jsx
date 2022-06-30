@@ -17,14 +17,16 @@ function App() {
     <div className="main-content">
       <NavBar />
       <div className="container">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profil" element={<UserProfil />} />
-          <Route path="/dashboard" element={<ProjectsBoard />} />
-          <Route path="/form" element={<ProjectForm />} />
-          <Route path="/project" element={<Project />} />
-          <Route path="/*" element={<Error404 />} />
-        </Routes>
+        <div className="container2">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/profil" element={<UserProfil />} />
+            <Route path="/dashboard" element={<ProjectsBoard />} />
+            <Route path="/form" element={<ProjectForm />} />
+            <Route path="/project" element={<Project />} />
+            <Route path="/*" element={<Error404 />} />
+          </Routes>
+        </div>
       </div>
       <ToastContainer />
     </div>

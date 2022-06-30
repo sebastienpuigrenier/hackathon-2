@@ -1,6 +1,5 @@
 .container-profil {
     margin: 2rem;
-    
 }
 
 .header-profil {
@@ -47,4 +46,8 @@
 .profile-projects {
     font-size: 1.2em;
     color: var(--color-gray);
+}
+
+.collaborator {
+    display: flex;
 }
