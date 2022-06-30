@@ -21,7 +21,11 @@ router.post("/users", UsersController.add);
 router.delete("/users/:id", UsersController.delete);
 
 router.get("/projects", ProjectsController.browse);
+router.get("/projects/ongoing/", ProjectsController.browseOngoing);
+router.get("/projects/idea/", ProjectsController.browseIdea);
+router.get("/projects/finished/", ProjectsController.browseFinished);
 router.get("/projects/:id", ProjectsController.read);
+router.get("/projects/complete/:id", ProjectsController.readComplete);
 router.put("/projects/:id", ProjectsController.modify);
 router.post("/projects", ProjectsController.add);
 router.delete("/projects/:id", ProjectsController.delete);
