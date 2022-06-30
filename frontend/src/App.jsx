@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 
 import NavBar from "@components/NavBar";
 import Home from "@pages/Home";
+import UserProfil from "@pages/UserProfil";
 import ProjectForm from "@pages/ProjectForm";
 import ProjectsBoard from "@pages/ProjectsBoard";
 import Project from "@pages/Project";
@@ -18,7 +19,8 @@ function App() {
       <div className="pages-content">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/board" element={<ProjectsBoard />} />
+          <Route path="/profil" element={<UserProfil />} />
+          <Route path="/dashboard" element={<ProjectsBoard />} />
           <Route path="/form" element={<ProjectForm />} />
           <Route path="/project" element={<Project />} />
           <Route path="/*" element={<Error404 />} />

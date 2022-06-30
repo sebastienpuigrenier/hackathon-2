@@ -1,0 +1,23 @@
+.container-profil {
+    width: 100%;
+    margin: 2rem;
+}
+
+.header-profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.ProjectsBoard {
+    display: flex;
+    justify-content: center;
+    background-color: var(--color-orange);
+    width: 100%;
+}
+
+.ProjectsBoard > h2 {
+    color: var(--color-blue);
+    font-family: var(--font-p);
+}
