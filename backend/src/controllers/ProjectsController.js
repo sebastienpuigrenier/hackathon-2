@@ -32,10 +32,6 @@ class ProjectsController {
   static modify = (req, res) => {
     const updatedProject = req.body;
 
-    // TODO validations (length, format...)
-
-    // updatedProject = parseInt(req.params.id, 10);
-
     models.projects
       .update(updatedProject, req.params.id)
       .then(([result]) => {
