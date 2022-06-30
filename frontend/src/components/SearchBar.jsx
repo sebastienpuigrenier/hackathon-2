@@ -1,15 +1,9 @@
 import React from "react";
 
 function SearchBar() {
-  const handlesubmit = (event) => {
-    event.preventDefault();
-    return console.warn("coucou");
-    // setSearchValue(event.target.value);
-  };
-
   return (
     <div className="searchBar">
-      <form onSubmit={handlesubmit}>
+      <form>
         <input
           id="search"
           type="text"
@@ -17,7 +11,13 @@ function SearchBar() {
           className="input"
         />
 
-        <input id="select" type="text" placeholder="  type" />
+        {/* <label> */}
+        <select>
+          <option value="idea">idea</option>
+          <option value="in_progress">in progress</option>
+          <option value="finished">finished</option>
+        </select>
+        {/* </label> */}
 
         <input type="submit" value="SEARCH" className="buttonBoard" />
       </form>
