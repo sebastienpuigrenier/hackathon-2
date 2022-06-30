@@ -17,26 +17,22 @@
   border-radius: 5px;
 }
 
-.header-project h2 {
-  color: var(--color-blue);
-  font-family: var(--font-p);
-}
-
-.center-header {
+/* .center-header {
   display: flex;
   justify-content: center;
   margin: 5rem 0 5rem 0;
-}
+} */
 
 .title-project {
   display: flex;
   justify-content: space-between;
+  margin-top: 3rem;
   width: 74em;
   border-bottom: 3px solid var(--color-orange);
 }
 
-.title-project h2 {
-  font-size: 16px;
+.title-project h1 {
+  font-size: 1.5em;
   font-family: var(--font-h1);
   color: var(--color-blue);
   font-weight: var(--extra-bold);
@@ -62,16 +58,39 @@
   margin-bottom: 1.5rem;
 }
 
-.ZONEDECOMMENTAIRE {
+.section-project h2 {
+  font-size: var(--M);
+  color: var(--color-gray);
+}
+
+.section-project h2 p {
+  font-size: var(--S)
+}
+
+.zone-commentaire {
   border-top: 2px solid var(--color-orange);
+}
+
+.zone-commentaire h1 {
+  border-top: 2px solid var(--color-orange);
+  font-size: 1.5em;
+  font-family: var(--font-h1);
+  color: var(--color-blue);
+  font-weight: var(--extra-bold);
+  text-transform: uppercase;
+  padding-top: 1rem;
+}
+
+.slider-container {
+  margin: 1.4rem 0;
 }
 
 .slider {
   -webkit-appearance: none;
   width: 50%;
-  height: 25px;
+  height: 17px;
   border-radius: 999px;
-  background: var(--color-gray);
+  background: var(--color-light-gray);
   outline: none;
 }
 
@@ -79,16 +98,16 @@
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-  background: var(--color-orange);
+  background: var(--color-gray);
   cursor: pointer;
 }
 
 .slider::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--color-orange);
   cursor: pointer;
@@ -103,14 +122,17 @@
 .slider-text-right {
   width: 10rem;
   text-align: start;
+  font-size: var(--XS);
 }
 
 .slider-text-center {
   width: 10rem;
   text-align: center;
+  font-size: var(--XS);
 }
 
 .slider-text-left {
   width: 10rem;
   text-align: end;
+  font-size: var(--XS);
 }
