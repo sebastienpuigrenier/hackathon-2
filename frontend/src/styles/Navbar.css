@@ -51,7 +51,7 @@
 
 .btn-logOut:hover {
   color: var(--color-orange);
-  transform: translateY(-1px) scale(1);
+  transform: translateY(-px) scale(1);
 }
 
 .container-navbar ul li {

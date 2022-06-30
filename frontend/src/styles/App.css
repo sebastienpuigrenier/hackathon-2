@@ -55,6 +55,5 @@ body {
 
 .pages-content {
   width: calc(100vw - var(--width-navbar));
-  overflow: scroll;
-
+  overflow: auto;
 }

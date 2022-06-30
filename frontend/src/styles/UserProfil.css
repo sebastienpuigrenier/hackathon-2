@@ -1,21 +1,30 @@
 .container-profil {
     margin: 2rem;
-}
-
-.header-profil {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 }
 
-.ProjectsBoard {
+.title-profil {
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: var(--color-orange);
+    width: 74em;
+    height: 2.5em;
+    border-radius: 5px;
 }
 
-.ProjectsBoard > h2 {
+.title-profil > h2 {
     color: var(--color-blue);
-    font-family: var(--font-p);
+    font-family: var(--font-h1);
+    text-transform: uppercase;
+    font-size: 1.6em;
+    font-weight: 900;
+}
+
+.info-user {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
 }

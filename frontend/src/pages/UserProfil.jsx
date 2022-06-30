@@ -6,15 +6,15 @@ function Profil() {
   return (
     <div className="container-profil">
       <div className="header-profil">
-        <div className="ProjectsBoard">
+        <div className="title-profil">
           <h2>My profil</h2>
         </div>
-      </div>
-      <div>
-        <p>utilisateur</p>
-        <div>
-          <h3>My projects</h3>
-          <h3>My collaborations</h3>
+        <div className="info-user">
+          <p>utilisateur</p>
+          <div>
+            <h3>My projects</h3>
+            <h3>My collaborations</h3>
+          </div>
         </div>
       </div>
     </div>

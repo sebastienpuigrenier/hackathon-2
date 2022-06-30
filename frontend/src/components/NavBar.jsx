@@ -47,11 +47,11 @@ function NavBar() {
             <ul>
               <li>
                 <NavLink
-                  to="/profile"
+                  to="/profil"
                   className="navLink"
                   style={getActiveLinkStyle}
                 >
-                  My profile
+                  My profil
                 </NavLink>
               </li>
               <li>
@@ -65,7 +65,7 @@ function NavBar() {
             <ul>
               <li>
                 <NavLink
-                  to="/board"
+                  to="/dashboard"
                   className="navLink"
                   style={getActiveLinkStyle}
                 >
