@@ -86,7 +86,8 @@ function Project() {
         <div className="title-project">
           <h1>{detailProject.name}</h1>
           <p className="thumbUp">
-            <HiThumbUp size="32px" /> 22
+            <HiThumbUp size="32px" />
+            {detailProject.nb_likes}
           </p>
         </div>
         <div className="slider-container">
