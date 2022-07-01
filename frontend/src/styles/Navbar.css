@@ -39,10 +39,21 @@
 }
 
 .user-name {
-  color: var(--color-black);
-  font-size: var(--M);
-  line-height: 1.9rem;
+  color: var(--color-blue);
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+  font-family: var(--font-h1);
+  font-weight: var(--black);
+  text-transform: uppercase;
+}
+
+.user-name2 {
+  color: var(--color-blue);
+  font-size: 1.5rem;
   margin-bottom: 1rem;
+  font-family: var(--font-h1);
+  font-weight: var(--black);
+  text-transform: uppercase;
 }
 
 .btn-logOut {
