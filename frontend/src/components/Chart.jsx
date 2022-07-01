@@ -13,7 +13,7 @@ function Chart(input) {
     <div>
       <PieChart
         data={arrayData}
-        style={{ height: "250px", width: "100%" }}
+        style={{ height: "250px", width: "100%", color: " #FF00FF" }}
         label={({ dataEntry }) =>
           `${Math.round(dataEntry.percentage)}% ${dataEntry.title}`
         }

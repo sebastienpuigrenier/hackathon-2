@@ -63,14 +63,9 @@ export default function CardDashboard({ info }) {
   }, []);
 
   return (
-    <div
-      role="button"
-      tabIndex={0}
-      className="container-card"
-      onClick={() => handleClick(projectId)}
-    >
+    <div className="container-card">
       <div className="card-top">
-        <div>
+        <div role="button" tabIndex={0} onClick={() => handleClick(projectId)}>
           <h1 className="card-title">{info.name}</h1>
         </div>
         <div className="card-thumb">

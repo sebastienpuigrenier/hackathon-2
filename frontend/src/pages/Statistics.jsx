@@ -133,7 +133,7 @@ function Statistics() {
   return (
     <div className="statistics">
       <div className="header-title-chart">
-        <h2>some statistics</h2>
+        <h2>let's see some figures</h2>
       </div>
       <div className="chart-container">
         <div className="chart1">
