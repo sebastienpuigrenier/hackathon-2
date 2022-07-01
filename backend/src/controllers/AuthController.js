@@ -5,7 +5,7 @@ const auth = require("../helpers/authHelper");
 class AuthController {
   static session = (req, res) => {
     models.users.findByEmail(req.body.email).then((user) => {
-   //   const { firstname, lastname, email, fonction, site, password } =
+      const { firstname, lastname, email, fonction, site, password } =
         user[0][0];
       auth
         .verifyPassword(req.body.password, password)
