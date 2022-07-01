@@ -78,7 +78,7 @@
   color: var(--color-blue);
   font-weight: var(--extra-bold);
   text-transform: uppercase;
-  padding-top: 1rem;
+  padding: 1rem;
 }
 
 .slider-container {
