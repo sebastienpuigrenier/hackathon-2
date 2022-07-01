@@ -118,7 +118,7 @@ function ProjectsBoard() {
           <div
             role="button"
             tabIndex={0}
-            onClick={() => setIsCardIdeaLimited(!isCardOngoingLimited)}
+            onClick={() => setIsCardIdeaLimited(!isCardIdeaLimited)}
           >
             {moreIdeaButton()}
           </div>
