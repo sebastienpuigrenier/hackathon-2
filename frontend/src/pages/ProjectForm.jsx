@@ -1,6 +1,7 @@
 import React, { useState, useContext, useEffect } from "react";
 import { notifySuccess, notifyError, api } from "@services/services";
 import { v4 as uuidv4 } from "uuid";
+import { useNavigate } from "react-router-dom";
 import projectStatus from "@services/projectStatus.json";
 import ExportContext from "../contexts/Context";
 
@@ -13,6 +14,7 @@ function ProjectForm() {
   const yyyy = today.getFullYear();
   today = `${yyyy}-${mm}-${dd}`;
 
+  const navigate = useNavigate();
   const projectId = uuidv4();
   const { userContext } = useContext(ExportContext.Context);
   const [newProject, setNewProject] = useState({
@@ -59,6 +61,7 @@ function ProjectForm() {
         .post(ENDPOINT, newProject)
         .then(() => {
           notifySuccess("Your idea is now propose to apside coworker.");
+          navigate("/dashboard");
         })
         .catch(() => {
           notifyError(
