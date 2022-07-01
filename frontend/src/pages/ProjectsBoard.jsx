@@ -7,7 +7,7 @@ function ProjectsBoard() {
   const [arrayData, setarrayData] = useState([]);
   const [value, setvalue] = useState([]);
 
-  const [arrayDataNew, setarrayDataNew] = useState([]);
+  // const [arrayDataNew, setarrayDataNew] = useState([]);
   const [arrayDataOngoing, setarrayDataOngoing] = useState([]);
   const [cardOngoingLength, setCardOngoingLength] = useState(0);
   const [isCardOngoingLimited, setIsCardOngoingLimited] = useState(true);
@@ -33,22 +33,58 @@ function ProjectsBoard() {
 
   const handleChange = (event) => {
     const search = event.target.value.toLowerCase();
-    setarrayDataNew(
-      arrayData.filter(
+    setarrayDataIdea(
+      arrayDataIdea.filter(
         (data) =>
           data.belonging_site.toLowerCase().includes(search) ||
           data.description.toLowerCase().includes(search) ||
-          data.goals.toLowerCase().includes(search)
+          data.goals.toLowerCase().includes(search) ||
+          data.name.toLowerCase().includes(search) ||
+          data.customer.toLowerCase().includes(search) ||
+          data.status.toLowerCase().includes(search) ||
+          data.creation_date.toLowerCase().includes(search) ||
+          data.update_to_project_date.toLowerCase().includes(search) ||
+          data.update_to_finish_date.toLowerCase().includes(search)
+      )
+    );
+    setarrayDataOngoing(
+      arrayDataOngoing.filter(
+        (data) =>
+          data.belonging_site.toLowerCase().includes(search) ||
+          data.description.toLowerCase().includes(search) ||
+          data.goals.toLowerCase().includes(search) ||
+          data.name.toLowerCase().includes(search) ||
+          data.customer.toLowerCase().includes(search) ||
+          data.status.toLowerCase().includes(search) ||
+          data.creation_date.toLowerCase().includes(search) ||
+          data.update_to_project_date.toLowerCase().includes(search) ||
+          data.update_to_finish_date.toLowerCase().includes(search)
+      )
+    );
+    setarrayDataFinished(
+      arrayDataFinished.filter(
+        (data) =>
+          data.belonging_site.toLowerCase().includes(search) ||
+          data.description.toLowerCase().includes(search) ||
+          data.goals.toLowerCase().includes(search) ||
+          data.name.toLowerCase().includes(search) ||
+          data.customer.toLowerCase().includes(search) ||
+          data.status.toLowerCase().includes(search) ||
+          data.creation_date.toLowerCase().includes(search) ||
+          data.update_to_project_date.toLowerCase().includes(search) ||
+          data.update_to_finish_date.toLowerCase().includes(search)
       )
     );
     if (search === "") {
-      setarrayDataNew(arrayData);
+      setarrayDataIdea(arrayDataIdea);
+      setarrayDataOngoing(arrayDataOngoing);
+      setarrayDataFinished(arrayDataFinished);
     }
+    setvalue(arrayData);
   };
   const handleclick = (event) => {
     event.preventDefault();
     setvalue(value);
-    console.warn(arrayDataNew);
   };
   const moreOngoingButton = () => {
     if (cardOngoingLength > 3) {
