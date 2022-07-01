@@ -6,7 +6,7 @@ import "../styles/Statistics.css";
 function Statistics() {
   const [arrayData, setarrayData] = useState([]);
   const [statOngoing, setStatOngoing] = useState({
-    title: "ongoing",
+    title: "Ongoing",
     color: "#E38627",
   });
   const [statIdea, setStatIdea] = useState({
@@ -56,15 +56,15 @@ function Statistics() {
 
   const [tabel, setTabel] = useState([]);
   const [lastYearStartedProjects, setLastYearStartedProjects] = useState({
-    title: "started projects",
-    color: "#C13C37",
+    title: "Started Projects",
+    color: "#E38627",
   });
   const [lastYearStartedIdeas, setLastYearStartedIdeas] = useState({
-    title: "started ideas",
+    title: "Started Ideas",
     color: "#C13C37",
   });
   const [lastYearFinishedProjects, setlastYearFinishedProjects] = useState({
-    title: "finished projects",
+    title: "Finished Projects",
     color: "#6A2135",
   });
 
@@ -136,14 +136,13 @@ function Statistics() {
         <h2>some statistics</h2>
       </div>
       <div className="chart-container">
-        <div>
+        <div className="chart1">
           <PieChart arrayData={arrayData} />
-          <div>
-            <p>Projets suivant leur statut</p>
-          </div>
+          <p>Current distribution of projects status</p>
         </div>
-        <div>
+        <div className="chart2">
           <PieChart arrayData={tabel} />
+          <p>For the year 2021</p>
         </div>
       </div>
     </div>
