@@ -167,7 +167,6 @@ function Statistics() {
             <p>For the year 2021</p>
           </div>
         </div>
-
       </div>
       <div style={{ display: "flex" }}>
         <div>
