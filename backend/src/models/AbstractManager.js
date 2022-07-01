@@ -19,6 +19,13 @@ class AbstractManager {
       id,
     ]);
   }
+
+  findByEmail(email) {
+    return this.connection.query(
+      `select id, firstname, lastname, email, fonction, site, password from  ${this.table} where email = ?`,
+      [email]
+    );
+  }
 }
 
 module.exports = AbstractManager;

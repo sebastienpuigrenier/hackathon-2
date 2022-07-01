@@ -1,9 +1,11 @@
 import React from "react";
 import axios from "axios";
 import papa from "papaparse";
+import { toast } from "react-toastify";
 
 const api = axios.create({
   baseURL: import.meta.env.VITE_BACKEND_URL,
+  withCredentials: true,
 });
 
 const ConvertGoogleSheet = (googleUrl) => {
@@ -47,4 +49,12 @@ const ConvertGoogleSheet = (googleUrl) => {
   return jsonFile;
 };
 
-export { ConvertGoogleSheet, api };
+const notifySuccess = (message) => {
+  toast.success(`Bravo : ${message}`);
+};
+
+const notifyError = (message) => {
+  toast.error(`Erreur : ${message}`);
+};
+
+export { ConvertGoogleSheet, notifySuccess, notifyError, api };

@@ -1,0 +1,137 @@
+.container-project-details {
+  margin: 2rem;
+}
+
+.header-project {
+  display: flex;
+  flex-direction: column;
+}
+
+.center-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-orange);
+  width: 74em;
+  height: 2.5em;
+  border-radius: 5px;
+}
+
+/* .center-header {
+  display: flex;
+  justify-content: center;
+  margin: 5rem 0 5rem 0;
+} */
+
+.title-project {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 3rem;
+  width: 74em;
+  border-bottom: 3px solid var(--color-orange);
+}
+
+.title-project h1 {
+  font-size: 1.5em;
+  font-family: var(--font-h1);
+  color: var(--color-blue);
+  font-weight: var(--extra-bold);
+  text-transform: uppercase;
+  padding-bottom: 0.3em;
+}
+
+.contributors {
+  display: flex;
+  align-items: center;
+}
+
+.contributors a {
+  color: var(--color-orange);
+  margin-left: 1rem;
+}
+
+.contributors a:hover {
+  text-decoration: underline;
+}
+
+.section-project {
+  margin-bottom: 1.5rem;
+}
+
+.section-project h2 {
+  font-size: var(--M);
+  color: var(--color-gray);
+}
+
+.section-project h2 p {
+  font-size: var(--S);
+}
+
+.zone-commentaire {
+  border-top: 2px solid var(--color-orange);
+}
+
+.zone-commentaire h1 {
+  border-top: 2px solid var(--color-orange);
+  font-size: 1.5em;
+  font-family: var(--font-h1);
+  color: var(--color-blue);
+  font-weight: var(--extra-bold);
+  text-transform: uppercase;
+  padding: 1rem;
+}
+
+.slider-container {
+  margin: 1.4rem 0;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 50%;
+  height: 17px;
+  border-radius: 999px;
+  background: var(--color-light-gray);
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-gray);
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-orange);
+  cursor: pointer;
+}
+
+.slider-label {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-text-right {
+  width: 10rem;
+  text-align: start;
+  font-size: var(--XS);
+}
+
+.slider-text-center {
+  width: 10rem;
+  text-align: center;
+  font-size: var(--XS);
+}
+
+.slider-text-left {
+  width: 10rem;
+  text-align: end;
+  font-size: var(--XS);
+}
