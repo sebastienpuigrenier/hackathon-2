@@ -15,22 +15,35 @@ const {
 const router = express.Router();
 
 router.get("/users", UsersController.browse);
+router.get("/users/byproject/:id", UsersController.browseByProject);
+router.get("/user/creator/:id", UsersController.browseCreator);
 router.get("/users/:id", UsersController.read);
-router.get("/users/:email", UsersController.readByEmail);
+router.get("/users/email/:email", UsersController.readByEmail);
 router.post("/users", UsersController.add);
 router.delete("/users/:id", UsersController.delete);
 
 router.get("/projects", ProjectsController.browse);
+router.get("/projects/ongoing/", ProjectsController.browseOngoing);
+router.get("/projects/idea/", ProjectsController.browseIdea);
+router.get("/projects/finished/", ProjectsController.browseFinished);
 router.get("/projects/:id", ProjectsController.read);
+router.get(
+  "/projects/collaborator/:id",
+  ProjectsController.browseByCollaborator
+);
+router.get("/projects/complete/:id", ProjectsController.readComplete);
 router.put("/projects/:id", ProjectsController.modify);
+router.put("/projects/like/:id", ProjectsController.modifyLike);
 router.post("/projects", ProjectsController.add);
 router.delete("/projects/:id", ProjectsController.delete);
 
 router.get("/keywords", KeywordsController.browse);
+router.get("/keywords/byproject/:id", KeywordsController.browseByProject);
 router.get("/keywords/:id", KeywordsController.read);
 router.post("/keywords", KeywordsController.add);
 
 router.get("/languages", LanguagesController.browse);
+router.get("/languages/byproject/:id", LanguagesController.browseByProject);
 router.get("/languages/:id", LanguagesController.read);
 router.post("/languages", LanguagesController.add);
 
@@ -68,6 +81,6 @@ router.delete(
 );
 
 router.post("/auth", AuthController.session);
-router.post("/auth/logout", AuthController.logout);
+router.get("/auth/logout", AuthController.logout);
 
 module.exports = router;

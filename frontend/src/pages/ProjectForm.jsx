@@ -4,6 +4,8 @@ import { v4 as uuidv4 } from "uuid";
 import projectStatus from "@services/projectStatus.json";
 import ExportContext from "../contexts/Context";
 
+import "../styles/AddProject.css";
+
 function ProjectForm() {
   let today = new Date();
   const dd = String(today.getDate()).padStart(2, "0");
@@ -33,7 +35,7 @@ function ProjectForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const ENDPOINTUSER = `/users/${newProject.email}`;
+    const ENDPOINTUSER = `/users/email/${newProject.email}`;
 
     api
       .get(ENDPOINTUSER, newProject)
@@ -68,75 +70,83 @@ function ProjectForm() {
 
   return (
     <div className="register">
-      <h1>Add your own project</h1>
+      <div className="header-title">
+        <h2>add your own project</h2>
+      </div>
 
-      <div>
-        <form onSubmit={handleSubmit} method="post">
+      <div className="form-add-project">
+        <form className="" onSubmit={handleSubmit} method="post">
           <div className="register_form">
-            <div>
+            <div className="name-area">
               <label htmlFor="title">
                 <input
+                  className="name-form"
                   type="text"
                   id="name"
                   name="name"
-                  placeholder="Project name"
+                  placeholder="PROJECT NAME"
                   onChange={handleChange}
                   required
                 />
               </label>
             </div>
-            <div>
+            <div className="customer-area">
               <label htmlFor="customer">
                 <input
+                  className="customer-form"
                   type="text"
                   id="customer"
                   name="customer"
-                  placeholder="Customer"
+                  placeholder="CUSTOMER"
                   onChange={handleChange}
                   required
                 />
               </label>
             </div>
-            <div>
+            <div className="language-area">
               <label htmlFor="languages">
                 <input
+                  className="language-form"
                   type="text"
                   id="languages"
                   name="languages"
-                  placeholder="Languages"
+                  placeholder="LANGUAGES"
                   onChange={handleChange}
                   required
                 />
               </label>
             </div>
-            <div>
+            <div className="keywords-area">
               <label htmlFor="keywords">
                 <input
+                  className="keywords-form"
                   type="text"
                   id="keywords"
                   name="keywords"
-                  placeholder="keywords #webdev #javascript"
+                  placeholder="KEYWORDS #WEBDEV #JAVASCRIPT"
                   onChange={handleChange}
                   required
                 />
               </label>
             </div>
-            <div>
+            <div className="description-area">
               <label htmlFor="description">
                 <textarea
+                  className="description-form"
                   id="description"
                   name="description"
-                  placeholder="Description"
+                  placeholder="DESCRIPTION"
                   onChange={handleChange}
                 />
               </label>
             </div>
-            <div>
+            <div className="goals-area">
               <label htmlFor="goals">
                 <textarea
+                  className="goals-form"
                   id="goals"
                   name="goals"
-                  placeholder="Goals"
+                  placeholder="GOALS"
                   onChange={handleChange}
                 />
               </label>

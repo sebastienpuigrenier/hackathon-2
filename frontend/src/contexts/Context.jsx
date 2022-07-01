@@ -6,11 +6,13 @@ function Provider({ children }) {
   // Ajouter ici vos useState pour créer un state dans le context
   const [isLog, setIsLog] = useState();
   const [userContext, setUserContext] = useState();
+  const [currentProject, setCurrentProject] = useState();
 
   // Ajouter ici si besoin le useEffect de votre state
   useEffect(() => {
     setIsLog(false);
     setUserContext({});
+    setCurrentProject({});
   }, []);
 
   return (
@@ -21,6 +23,8 @@ function Provider({ children }) {
         setIsLog,
         userContext,
         setUserContext,
+        currentProject,
+        setCurrentProject,
       }}
     >
       {children}

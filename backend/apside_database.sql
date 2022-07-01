@@ -86,11 +86,14 @@ INSERT INTO  `USERS` (`id`, `firstname`, `lastname`, `email`, `password`, `fonct
 INSERT INTO `PROJECTS` (`id`,`name`, `description`, `goals`, `customer`, `status`, `creation_date`, `update_to_project_date`, `update_to_finish_date`,
  `belonging_site`, `nb_likes`, `user_id`) VALUES
  ('ilytkfqngrotuihg15687651','DEPARTMENT REORGANISATION','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-'APSIDE', 'PROJECT', '2020-03-01','2021-02-15', '1900-01-01', 'STRASBOURG', 0, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
+'APSIDE', 'in progress', '2020-03-01','2021-02-15', '1900-01-01', 'STRASBOURG', 0, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
 ('ilytkfqngrotui31687651','INTEGRATION OF NEW COLLABORATORS','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-'APSIDE', 'PROJECT', '2019-12-12', '2020-02-12','1900-01-01', 'STRASBOURG', 8, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
+'APSIDE', 'in progress', '2019-12-12', '2020-02-12','1900-01-01', 'STRASBOURG', 8, '2c40b2c4-755a-4d90-bcb9-155ff4083327'),
 ('lykfjgklftylg8523164','COMPUTERISED DOCUMENT MANAGEMENT','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
-'APSIDE', 'FINISHED','2018-09-11','2019-02-11','2019-09-20', 'ANGERS', 26, '2c40b2c4-755a-4d90-bcb9-155ff4083325');
+'APSIDE', 'finished','2018-09-11','2019-02-11','2019-09-20', 'ANGERS', 26, '2c40b2c4-755a-4d90-bcb9-155ff4083325'),
+('ilytkfqngfotuihg15687651','CARD TEST FOR EXEMPLE','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore. Lorem ipsum dolor sit amet, consectetur adipiscing elit.','Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.',
+'APSIDE', 'idea', '2020-03-01','1900-01-01', '1900-01-01', 'STRASBOURG', 0, '2c40b2c4-755a-4d90-bcb9-155ff4083327');
+
 
 
 INSERT INTO `KEYWORDS` (`id`, `keyword`) VALUES

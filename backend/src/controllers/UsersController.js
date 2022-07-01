@@ -13,6 +13,32 @@ class UsersController {
       });
   };
 
+  static browseByProject = (req, res) => {
+    const projectid = req.params.id;
+    models.users
+      .findAllByProject(projectid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static browseCreator = (req, res) => {
+    const projectid = req.params.id;
+    models.users
+      .findCreator(projectid)
+      .then(([rows]) => {
+        res.send(rows);
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static read = (req, res) => {
     models.users
       .find(req.params.id)
@@ -32,6 +58,7 @@ class UsersController {
   static readByEmail = (req, res) => {
     models.users
       .findByEmail(req.params.email)
+
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
