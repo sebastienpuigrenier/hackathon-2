@@ -1,19 +1,46 @@
 import React, { useEffect, useState, useContext } from "react";
-import { api } from "@services/services";
+import { notifySuccess, notifyError, api } from "@services/services";
 import MessageBoard from "@components/MessageBoard";
 import { HiThumbUp } from "react-icons/hi";
 import ExportContext from "../contexts/Context";
 import "../styles/Project.css";
 
 function Project() {
-  const { currentProject } = useContext(ExportContext.Context);
+  const { currentProject, userContext } = useContext(ExportContext.Context);
   const projectId = currentProject;
+  const [userID, setUserId] = useState();
+  const [update, setUpdate] = useState(false);
 
   const [detailProject, setDetailProject] = useState([]);
 
   const [keywordsArray, setKeywordsArray] = useState([]);
   const [languagesArray, setLanguagesArray] = useState([]);
   const [usersArray, setUsersArray] = useState([]);
+
+  const { email } = userContext;
+  const ENDPOINTUSER = `/users/email/${email}`;
+  useEffect(() => {
+    api.get(ENDPOINTUSER).then((response) => {
+      setUserId(response.data.id);
+    });
+  }, []);
+
+  const handleClick = (projectinfo) => {
+    const ENDPOINTCONTRIBUTOR = `/usersProjects`;
+    const data = {
+      user_id: userID,
+      project_id: projectinfo,
+    };
+    api
+      .post(ENDPOINTCONTRIBUTOR, data)
+      .then(() => {
+        notifySuccess("You are now a contributor to this project");
+        setUpdate(!update);
+      })
+      .catch(() => {
+        notifyError("A problem occurs during the procss");
+      });
+  };
 
   useEffect(() => {
     const ENDPOINTKEYWORDS = `/keywords/byproject/${projectId}`;
@@ -46,7 +73,7 @@ function Project() {
       setUsersArray(results[2].data);
       setDetailProject(results[3].data);
     });
-  }, []);
+  }, [update]);
 
   return (
     <div className="container-project-details">
@@ -103,7 +130,13 @@ function Project() {
         <div className="section-project">
           <div className="contributors">
             <h2>Contributors</h2>
-            <a href="/github">Contribute to this project</a>
+            <div
+              role="button"
+              tabIndex={0}
+              onClick={() => handleClick(projectId)}
+            >
+              Contribute to this project
+            </div>
           </div>
           {usersArray.map((e) => {
             return (
