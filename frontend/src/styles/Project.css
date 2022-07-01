@@ -94,7 +94,6 @@
   outline: none;
 }
 
-
 .slider::-webkit-slider-thumb {
   -webkit-appearance: none;
   appearance: none;
@@ -116,7 +115,7 @@
 .slider-label {
   width: 50%;
   display: flex;
-  justify-content:space-between;
+  justify-content: space-between;
 }
 
 .slider-text-right {
@@ -136,3 +135,4 @@
   text-align: end;
   font-size: var(--XS);
 }
+
