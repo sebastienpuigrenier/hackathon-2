@@ -1,10 +1,11 @@
 @import "../styles/App.css";
 
 .chart-container {
+  width: 100%;
+  position: relative;
   display: flex;
   justify-content: space-between;
   margin: 4em;
-  border: 2px solid red;
 }
 
 .statistics {
@@ -12,7 +13,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 2.5em;
   padding-bottom: 1.5em;
 }
 
@@ -32,4 +32,22 @@
   text-transform: uppercase;
   font-size: 1.6em;
   font-weight: 900;
+}
+
+.chart1 {
+  width: 50%;
+  text-align: center;
+}
+
+.chart2 {
+  width: 50%;
+  text-align: center;
+}
+
+.chart1>p {
+  margin-top: 1rem;
+}
+
+.chart2>p {
+  margin-top: 1rem;
 }
