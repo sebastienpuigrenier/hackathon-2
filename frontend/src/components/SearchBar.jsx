@@ -1,26 +1,40 @@
-import React from "react";
+import React, { useState } from "react";
+import nameProject from "../services/search";
+// import { api } from "@services/services";
 
 function SearchBar() {
+  const [value , setValue]= useState("")
+
+  const handleclick = (event) => {
+    nameProject(value);
+    console.log(nameProject(value));
+  }
+  const handleChange = (event) => {
+    setValue(event.target.value)
+    
+  };
+
   return (
     <div className="searchBar">
-      <form>
-        <input
-          id="search"
-          type="text"
-          placeholder="  Search project"
-          className="input"
-        />
+      
+      <input
+        id="search"
+        type="search"
+        name="search"
+        value={value}
+        placeholder="Search projet"
+        className="input"
+        onChange={handleChange}
+      />
 
-        {/* <label> */}
-        <select>
-          <option value="idea">idea</option>
-          <option value="in_progress">in progress</option>
-          <option value="finished">finished</option>
-        </select>
-        {/* </label> */}
+      <select>
+        <option value="idea">idea</option>
+        <option value="in_progress">in progress</option>
+        <option value="finished">finished</option>
+      </select>
 
-        <input type="submit" value="SEARCH" className="buttonBoard" />
-      </form>
+      <button type="button" onClick={handleclick}>SEARCH</button>
+      
     </div>
   );
 }
