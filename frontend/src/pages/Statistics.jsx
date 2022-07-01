@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { api } from "@services/services";
+import CardDashboard from "@components/CardDashboard";
 import PieChart from "../components/Chart";
+import PieChart2 from "../components/ChartBis";
+
 import "../styles/Statistics.css";
 
 function Statistics() {
@@ -56,16 +59,16 @@ function Statistics() {
 
   const [tabel, setTabel] = useState([]);
   const [lastYearStartedProjects, setLastYearStartedProjects] = useState({
-    title: "Started Projects",
-    color: "#E38627",
+    title: "New Projects",
+    color: "#e79759",
   });
   const [lastYearStartedIdeas, setLastYearStartedIdeas] = useState({
-    title: "Started Ideas",
-    color: "#C13C37",
+    title: "New Ideas",
+    color: "#183650",
   });
   const [lastYearFinishedProjects, setlastYearFinishedProjects] = useState({
     title: "Finished Projects",
-    color: "#6A2135",
+    color: "#949494",
   });
 
   useEffect(() => {
@@ -130,19 +133,54 @@ function Statistics() {
       );
   }, []);
 
+  const projectidmorelike = "lykfjgklftylg8523164";
+  const [projectmoreliked, setprojectmoreliked] = useState({});
+  useEffect(() => {
+    const ENDPOINT = `/projects/${projectidmorelike}`;
+    api.get(ENDPOINT).then((result) => {
+      setprojectmoreliked(result.data);
+    });
+  }, []);
+
+  const projectmorecontributors = "ilytkqsdngr654ssfeqfe51";
+  const [projectcontributors, setprojectcontributors] = useState({});
+  useEffect(() => {
+    const ENDPOINT = `/projects/${projectmorecontributors}`;
+    api.get(ENDPOINT).then((result) => {
+      setprojectcontributors(result.data);
+    });
+  }, []);
+
   return (
     <div className="statistics">
-      <div className="header-title-chart">
-        <h2>let's see some figures</h2>
-      </div>
-      <div className="chart-container">
-        <div className="chart1">
-          <PieChart arrayData={arrayData} />
-          <p>Current distribution of projects status</p>
+      <div>
+        <div className="header-title-chart">
+          <h2>let's see some figures</h2>
         </div>
-        <div className="chart2">
-          <PieChart arrayData={tabel} />
-          <p>For the year 2021</p>
+        <div className="chart-container">
+          <div className="chart1">
+            <PieChart arrayData={arrayData} />
+            <p>Projects status current distribution</p>
+          </div>
+          <div className="chart2">
+            <PieChart2 arrayData={tabel} />
+            <p>For the year 2021</p>
+          </div>
+        </div>
+
+      </div>
+      <div style={{ display: "flex" }}>
+        <div>
+          <h2>More liked Project</h2>
+          <CardDashboard info={projectmoreliked} />
+        </div>
+        <div>
+          <h2>Top Contributors Project</h2>
+          <CardDashboard info={projectcontributors} />
+        </div>
+        <div>
+          <h2>Best Contributor</h2>
+          <p>Christophe Boinet</p>
         </div>
       </div>
     </div>
