@@ -89,23 +89,23 @@ function Statistics() {
 
     api
       .get(ENDPOINT_PROJ)
-      .then((result1) => {
-        result1.data.filter(
+      .then((resultA) => {
+        return resultA.data.filter(
           (ev) => ev.update_to_project_date.slice(0, 4) === "2021"
         );
       })
-      .then((arrayOngoingData) =>
+      .then((arrayOngoingData) => {
         setLastYearStartedProjects({
           ...lastYearStartedProjects,
           value: arrayOngoingData.length,
-        })
-      );
+        });
+      });
 
     api
       .get(API_IDEAS)
-      .then((resultat1) => {
-        resultat1.data.filter(
-          (ev1) => ev1.update_to_project_date.slice(0, 4) === "2021"
+      .then((resultatB) => {
+        return resultatB.data.filter(
+          (ev1) => ev1.creation_date.slice(0, 4) === "2021"
         );
       })
       .then((arrayIdeasData) =>
@@ -117,9 +117,9 @@ function Statistics() {
 
     api
       .get(DATA_FP)
-      .then((resultFinished2) => {
-        resultFinished2.data.filter(
-          (ev1) => ev1.update_to_project_date.slice(0, 4) === "2021"
+      .then((resultFinished3) => {
+        return resultFinished3.data.filter(
+          (ev1) => ev1.update_to_finish_date.slice(0, 4) === "2021"
         );
       })
       .then((arrayFinishedData) =>

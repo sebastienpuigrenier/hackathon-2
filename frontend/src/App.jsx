@@ -7,7 +7,7 @@ import UserProfil from "@pages/UserProfil";
 import ProjectForm from "@pages/ProjectForm";
 import ProjectsBoard from "@pages/ProjectsBoard";
 import Project from "@pages/Project";
-// import Statistics from "@pages/Statistics";
+import Statistics from "@pages/Statistics";
 import Error404 from "@pages/Error404";
 
 import "./styles/App.css";
@@ -25,6 +25,7 @@ function App() {
             <Route path="/dashboard" element={<ProjectsBoard />} />
             <Route path="/form" element={<ProjectForm />} />
             <Route path="/project" element={<Project />} />
+            <Route path="/statistics" element={<Statistics />} />
             <Route path="/*" element={<Error404 />} />
           </Routes>
         </div>
