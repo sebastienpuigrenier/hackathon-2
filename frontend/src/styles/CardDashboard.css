@@ -25,18 +25,20 @@
 }
 
 .card-title {
-  font-size: 12px;
+  font-size: 0.8em;
   font-family: var(--font-h1);
   color: var(--color-blue);
   font-weight: var(--extra-bold);
   text-transform: uppercase;
   padding-bottom: 0.3em;
+  cursor: pointer;
 }
 
-.card-thumb {
+.button-like {
+  border: none;
   color: var(--color-orange);
 }
-.card-thumb:hover {
+.button-like:hover {
   color: var(--color-blue);
   transform: scale(1.1);
   cursor: pointer;
