@@ -62,7 +62,7 @@ function Project() {
             <HiThumbUp size="32px" /> 22
           </p>
         </div>
-        <div>
+        <div className="slider-container">
           <div className="slider-label">
             <div className="slider-text-right">Idea</div>
             <div className="slider-text-center">In progress</div>
@@ -119,8 +119,8 @@ function Project() {
             return <p> #{e.keyword} </p>;
           })}
         </div>
-        <div className="ZONEDECOMMENTAIRE">
-          <h1>COMMENTAIRES</h1>
+        <div className="zone-commentaire">
+          <h1>Commentaires</h1>
           <MessageBoard projectId={projectId} />
         </div>
       </div>
