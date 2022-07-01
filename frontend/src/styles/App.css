@@ -28,7 +28,7 @@
   --L: clamp(1.25rem, 3vw, 2.25rem);
   --XL: clamp(2rem, 3.5vw, 4rem);
 
-  --width-navbar: 16rem;
+  --width-navbar: 10rem;
 }
 
 a {

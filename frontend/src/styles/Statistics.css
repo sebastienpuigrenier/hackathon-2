@@ -2,9 +2,9 @@
 
 .chart-container {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 4em;
+  justify-content: space-between;
+  margin: 4em;
+  border: 2px solid red;
 }
 
 .statistics {

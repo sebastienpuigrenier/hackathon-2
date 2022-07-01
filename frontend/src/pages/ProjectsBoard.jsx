@@ -48,6 +48,7 @@ function ProjectsBoard() {
   const handleclick = (event) => {
     event.preventDefault();
     setvalue(value);
+    console.warn(arrayDataNew);
   };
   const moreOngoingButton = () => {
     if (cardOngoingLength > 3) {
@@ -193,3 +194,4 @@ function ProjectsBoard() {
     </div>
   );
 }
+export default ProjectsBoard;
