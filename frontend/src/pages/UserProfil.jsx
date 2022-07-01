@@ -40,12 +40,11 @@ function Profil() {
     <div className="container-profil">
       <div className="header-profil">
         <div className="title-profil">
-          <h2>My profil</h2>
+          <h2>My profile</h2>
         </div>
       </div>
       <div className="info-user">
         <BsPersonCircle size="6em" className="logo-avatar" />
-        <p>{`${userContext.firstname} ${userContext.lastname}`}</p>
       </div>
       <div className="profile-projects">
         <h3>My projects</h3>

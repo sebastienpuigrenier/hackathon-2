@@ -24,6 +24,7 @@
   width: 74em;
   height: 2.5em;
   border-radius: 5px;
+  margin-top: 2rem;
 }
 
 .header-title-chart > h2 {
@@ -44,10 +45,10 @@
   text-align: center;
 }
 
-.chart1>p {
+.chart1 > p {
   margin-top: 1rem;
 }
 
-.chart2>p {
+.chart2 > p {
   margin-top: 1rem;
 }
